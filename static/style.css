@@ -2052,3 +2052,50 @@ h2 {
         padding: 1.5rem;
     }
 }
+
+/* ================================
+   ABOUT PAGE SPACING FIXES
+================================ */
+
+/*
+   Gives the About page enough room under the fixed navigation.
+*/
+.about-me {
+    margin: 9rem auto 4rem auto;
+}
+
+/*
+   Centers and contains the Snapshots section so it does not hug the left edge.
+*/
+.snapshots-section {
+    max-width: 1200px;
+    margin: 5rem auto 4rem auto;
+    padding: 0 1.5rem;
+}
+
+/*
+   Keeps the Snapshots header aligned with the rest of the portfolio style.
+*/
+.snapshots-section .section-header {
+    max-width: 800px;
+    margin-bottom: 2rem;
+}
+
+/*
+   Removes any leftover global heading spacing from affecting this section.
+*/
+.snapshots-section h2 {
+    margin-top: 0;
+}
+
+/*
+   Fixes the typo in the photo gallery grid.
+   There should be no space between 220 and px.
+*/
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+    padding: 2rem 0;
+    justify-items: center;
+}
