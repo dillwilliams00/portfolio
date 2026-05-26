@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Makes the page scale correctly on mobile screens -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dillon Williams | Full-Stack Developer in Progress</title>
+
+    <!-- Connects this page to your main stylesheet -->
+    <link href="../static/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Main navigation -->
+    <nav class="nav">
+        <h1 class="nav-title">DW Portfolio</h1>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+
+            <li><a href="projects.html">Projects</a></li>
+
+            <li class="nav-dropdown">
+                <a href="about.html">About</a>
+
+                <ul class="dropdown-menu">
+                    <li><a href="about.html">About Me</a></li>
+                    <li><a href="about.html#learning-journey">Learning Journey</a></li>
+                    <li>
+                        <a href="../assets/resume.pdf" target="_blank" rel="noopener noreferrer">
+                            Resume PDF
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li><a href="pricing.html">Pricing</a></li>
+        </ul>
+    </nav>
+
+    <main class="home-page">
+
+        <!-- Hero section -->
+        <section class="home-hero">
+            <div class="home-hero-content">
+                <p class="eyebrow">UX-Informed Full-Stack Development</p>
+
+                <h1>Building thoughtful digital products from idea to iteration.</h1>
+
+                <p class="home-hero-intro">
+                    I’m Dillon Williams — a full-stack developer in progress with a background
+                    in psychology, sociology, and UX design. I build products that focus on
+                    clarity, usability, and real human behavior while documenting what I learn
+                    along the way.
+                </p>
+
+                <div class="home-hero-actions">
+                    <a href="projects.html" class="project-card-link">
+                        View My Work
+                    </a>
+
+                    <a href="pricing.html" class="secondary-link">
+                        Explore Services
+                    </a>
+                </div>
+            </div>
+
+            <aside class="home-hero-card">
+                <p class="project-status">Current Focus</p>
+                <h2>;Prompt-it</h2>
+                <p>
+                    A live full-stack creativity platform that I am actively updating,
+                    documenting, and improving after moving development off Replit.
+                </p>
+
+                <div class="project-tags">
+                    <span>Live Product</span>
+                    <span>Full-Stack</span>
+                    <span>UX</span>
+                </div>
+            </aside>
+        </section>
+
+        <!-- Brand / value section -->
+        <section class="home-values">
+            <div class="section-header">
+                <p class="eyebrow">How I Build</p>
+                <h2>Human-centered, practical, and always improving.</h2>
+                <p>
+                    My work combines UX thinking, product strategy, and hands-on development.
+                    I care about building things that are useful, understandable, and able to
+                    grow over time.
+                </p>
+            </div>
+
+            <div class="home-value-grid">
+
+                <article class="home-value-card">
+                    <span class="value-number">01</span>
+                    <h3>Understand the User</h3>
+                    <p>
+                        My psychology and UX background helps me think about what people need,
+                        what confuses them, and what makes a product easier to use.
+                    </p>
+                </article>
+
+                <article class="home-value-card">
+                    <span class="value-number">02</span>
+                    <h3>Build in Stages</h3>
+                    <p>
+                        I start with structure and clarity, then add polish, interactivity,
+                        backend logic, and data as the project becomes more complete.
+                    </p>
+                </article>
+
+                <article class="home-value-card">
+                    <span class="value-number">03</span>
+                    <h3>Document the Process</h3>
+                    <p>
+                        I use devlogs and case studies to explain what I built, what I learned,
+                        what broke, and what needs to improve next.
+                    </p>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- Featured project preview -->
+        <section class="home-featured-work">
+            <div class="section-header">
+                <p class="eyebrow">Featured Build</p>
+                <h2>;Prompt-it</h2>
+                <p>
+                    My main live product and strongest current case study.
+                </p>
+            </div>
+
+            <article class="home-featured-card">
+                <div class="home-featured-image">
+                    <img 
+                        src="https://picsum.photos/900/600" 
+                        alt="Placeholder preview for ;Prompt-it"
+                    >
+                </div>
+
+                <div class="home-featured-content">
+                    <p class="project-status">Live Product · Active Build</p>
+
+                    <h3>A full-stack creativity platform</h3>
+
+                    <p>
+                        ;Prompt-it is built around daily creative prompts, community responses,
+                        friend interactions, a credit economy, subscriptions, and creative game
+                        modes. My current work focuses on taking ownership of the codebase,
+                        documenting the architecture, and improving the product after migration.
+                    </p>
+
+                    <div class="project-tags">
+                        <span>React Native</span>
+                        <span>PostgreSQL</span>
+                        <span>Stripe</span>
+                        <span>Migration</span>
+                    </div>
+
+                    <a href="projects/prompt-it.html" class="project-card-link">
+                        Read the Case Study
+                    </a>
+                </div>
+            </article>
+        </section>
+
+        <!-- Commit History blog section -->
+        <section class="commit-history-preview">
+            <div class="section-header">
+                <p class="eyebrow">Commit History</p>
+                <h2>What I’m learning as I build.</h2>
+                <p>
+                    Commit History is my live blog where I document progress, decisions,
+                    mistakes, fixes, and lessons from my coding journey.
+                </p>
+            </div>
+
+            <div class="commit-card-grid">
+
+                <article class="commit-card">
+                    <p class="project-status">Live Blog</p>
+                    <h3>Build Notes, Devlogs, and Reflections</h3>
+                    <p>
+                        I use Commit History to turn my development process into readable posts:
+                        what changed, why it mattered, what I learned, and what I would do
+                        differently next time.
+                    </p>
+
+                    <a 
+                        href="https://commithistory.blogspot.com" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        class="project-card-link"
+                    >
+                        Read Commit History
+                    </a>
+                </article>
+
+                <article class="commit-card commit-card-muted">
+                    <p class="project-status">Coming Later</p>
+                    <h3>Dynamic Blog Preview</h3>
+                    <p>
+                        As I learn JavaScript and backend development, this section can evolve
+                        from a static link into a live preview of recent blog posts.
+                    </p>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- Services CTA -->
+        <section class="home-services-cta">
+            <div>
+                <p class="eyebrow">Website Services</p>
+                <h2>Need a clear website for your business?</h2>
+                <p>
+                    I help small businesses organize their ideas, services, and goals into clean,
+                    user-focused websites that explain what they do and give customers a clear
+                    next step.
+                </p>
+            </div>
+
+            <a href="pricing.html" class="project-card-link">
+                View Services & Pricing
+            </a>
+        </section>
+
+        <!-- Contact CTA -->
+        <section class="home-contact">
+            <p class="eyebrow">Let’s Connect</p>
+            <h2>Want to talk about a project?</h2>
+            <p>
+                Reach out if you want to discuss a website, a product idea, or my current work.
+            </p>
+
+            <a 
+                class="project-card-link"
+                href="mailto:dill.williams00@gmail.com"
+            >
+                Email Me
+            </a>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Dillon Williams. All rights reserved. Crafted with ❤️</p>
+    </footer>
+
+</body>
+</html>

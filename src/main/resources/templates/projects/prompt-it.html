@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Helps the page resize correctly on mobile devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>;Prompt-it Case Study | Dillon Williams</title>
+
+    <!-- 
+        Because this file is inside templates/projects/,
+        it needs to go up two folders to reach static/style.css.
+    -->
+    <link href="../../static/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Main navigation -->
+    <nav class="nav">
+        <h1 class="nav-title">DW Portfolio</h1>
+
+        <ul class="nav-links">
+            <li><a href="../index.html">Home</a></li>
+
+            <li><a href="../projects.html">Projects</a></li>
+
+            <li class="nav-dropdown">
+                <a href="../about.html">About</a>
+
+                <ul class="dropdown-menu">
+                    <li><a href="../about.html">About Me</a></li>
+                    <li><a href="../about.html#learning-journey">Learning Journey</a></li>
+                    <li>
+                        <a href="../../assets/resume.pdf" target="_blank" rel="noopener noreferrer">
+                            Resume PDF
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li><a href="../pricing.html">Pricing</a></li>
+        </ul>
+    </nav>
+
+    <main class="case-study-page">
+
+        <!-- Back link -->
+        <a href="../projects.html" class="back-link">← Back to Projects</a>
+
+        <!-- Hero section -->
+        <section class="case-study-hero">
+            <p class="eyebrow">Featured Case Study</p>
+
+            <h1>;Prompt-it</h1>
+
+            <p class="case-study-intro">
+                ;Prompt-it is a live full-stack creativity platform built around daily creative
+                prompts, community responses, friend interactions, a credit-based shop,
+                subscriptions, direct messaging, and real-time creative game modes.
+            </p>
+
+            <div class="case-study-tags">
+                <span>Live Product</span>
+                <span>Full-Stack</span>
+                <span>UX Design</span>
+                <span>Migration</span>
+                <span>React Native</span>
+                <span>PostgreSQL</span>
+                <span>Stripe</span>
+            </div>
+        </section>
+
+        <!-- Project snapshot -->
+        <section class="project-overview-grid">
+
+            <article class="overview-card">
+                <h2>My Role</h2>
+                <p>
+                    I am taking ownership of ;Prompt-it as the developer responsible for
+                    understanding the existing codebase, documenting how it works, improving
+                    the product, and continuing development outside of Replit.
+                </p>
+            </article>
+
+            <article class="overview-card">
+                <h2>Project Status</h2>
+                <p>
+                    Live product and active build. The core flows are functional, including
+                    signup, daily prompts, feed, shop, payments, and user interaction.
+                </p>
+            </article>
+
+            <article class="overview-card">
+                <h2>Focus Right Now</h2>
+                <p>
+                    My current focus is stabilizing the product after migration, fixing
+                    high-priority risks, documenting the architecture, and preparing the app
+                    for future updates.
+                </p>
+            </article>
+
+        </section>
+
+        <!-- Large project image -->
+        <section class="case-study-image-section">
+            <img 
+                src="https://picsum.photos/1200/650" 
+                alt="Placeholder preview image for the ;Prompt-it project"
+                class="case-study-image"
+            >
+        </section>
+
+        <!-- Overview -->
+        <section class="case-study-section">
+            <p class="eyebrow">Overview</p>
+            <h2>What is ;Prompt-it?</h2>
+
+            <p>
+                ;Prompt-it is a daily creativity app where users receive a rotating creative
+                prompt and respond using text, a doodle, or a photo. Those responses are then
+                shared in a community feed where friends can react, comment, and like each
+                other’s work.
+            </p>
+
+            <p>
+                Beyond the daily prompt loop, the product includes Prompt Party, Storybook Mode,
+                a credit-based economy, an in-app shop, a Plus subscription, direct messaging,
+                a creator ambassador program, and a companion marketing website.
+            </p>
+        </section>
+
+        <!-- Problem -->
+        <section class="case-study-section">
+            <p class="eyebrow">Problem</p>
+            <h2>The Problem It Solves</h2>
+
+            <p>
+                Many people want to be creative, but getting started can feel intimidating.
+                A blank page creates friction, and creativity can become something people keep
+                intending to do but never actually turn into a habit.
+            </p>
+
+            <p>
+                ;Prompt-it solves this by giving users one small creative starting point each
+                day, multiple ways to respond, and a social layer that makes the habit feel
+                shared instead of isolated.
+            </p>
+        </section>
+
+        <!-- Target users -->
+        <section class="case-study-section">
+            <p class="eyebrow">Target Users</p>
+            <h2>Who It Is For</h2>
+
+            <div class="case-study-card-grid">
+
+                <article class="case-study-card">
+                    <h3>Creative Beginners</h3>
+                    <p>
+                        People who want to express themselves but need a low-pressure starting point.
+                    </p>
+                </article>
+
+                <article class="case-study-card">
+                    <h3>Friend Groups</h3>
+                    <p>
+                        Users who want a more creative way to connect than a normal group chat.
+                    </p>
+                </article>
+
+                <article class="case-study-card">
+                    <h3>Habit Builders</h3>
+                    <p>
+                        People who want a small daily creative ritual supported by streaks,
+                        missions, and rewards.
+                    </p>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- Core features -->
+        <section class="case-study-section">
+            <p class="eyebrow">Core Features</p>
+            <h2>What the Product Includes</h2>
+
+            <div class="feature-list">
+
+                <article class="feature-row">
+                    <span class="feature-number">01</span>
+                    <div>
+                        <h3>Daily Rotating Prompt</h3>
+                        <p>
+                            A shared creative prompt gives users one clear starting point each day.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="feature-row">
+                    <span class="feature-number">02</span>
+                    <div>
+                        <h3>Text, Doodle, and Photo Submissions</h3>
+                        <p>
+                            Users can respond in the format that feels most natural to them.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="feature-row">
+                    <span class="feature-number">03</span>
+                    <div>
+                        <h3>Community Feed</h3>
+                        <p>
+                            Friends can view, like, comment, and react to each other’s responses.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="feature-row">
+                    <span class="feature-number">04</span>
+                    <div>
+                        <h3>Direct Messages</h3>
+                        <p>
+                            Friends can message each other and send claimable gift rewards.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="feature-row">
+                    <span class="feature-number">05</span>
+                    <div>
+                        <h3>Prompt Party & Storybook Mode</h3>
+                        <p>
+                            Real-time creative game modes give users another reason to return
+                            with friends.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="feature-row">
+                    <span class="feature-number">06</span>
+                    <div>
+                        <h3>Shop, Credits, and Plus Subscription</h3>
+                        <p>
+                            A credit economy supports prompt packs, streak items, cosmetics,
+                            purchases, and subscription perks.
+                        </p>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- Build timeline -->
+        <section class="case-study-section">
+            <p class="eyebrow">Build Timeline</p>
+            <h2>How the Product Evolved</h2>
+
+            <div class="case-timeline">
+
+                <article class="case-timeline-item">
+                    <span>Phase 1</span>
+                    <h3>Foundation</h3>
+                    <p>
+                        The project began with the core app structure, database schema,
+                        and daily prompt loop.
+                    </p>
+                </article>
+
+                <article class="case-timeline-item">
+                    <span>Phase 2</span>
+                    <h3>Social Layer</h3>
+                    <p>
+                        Friends, feed, reactions, comments, and direct messaging were added
+                        to make the app feel alive.
+                    </p>
+                </article>
+
+                <article class="case-timeline-item">
+                    <span>Phase 3</span>
+                    <h3>Economy & Monetization</h3>
+                    <p>
+                        Credits, shop items, missions, streaks, Stripe payments, and the Plus
+                        subscription were introduced.
+                    </p>
+                </article>
+
+                <article class="case-timeline-item">
+                    <span>Phase 4</span>
+                    <h3>Creative Game Modes</h3>
+                    <p>
+                        Prompt Party and Storybook Mode expanded the product beyond solo
+                        daily prompts.
+                    </p>
+                </article>
+
+                <article class="case-timeline-item">
+                    <span>Phase 5</span>
+                    <h3>Migration & Ownership</h3>
+                    <p>
+                        The product moved off Replit so I could begin developing it myself,
+                        documenting the architecture, and improving the codebase.
+                    </p>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- UX decisions -->
+        <section class="case-study-section">
+            <p class="eyebrow">UX Decisions</p>
+            <h2>Key Experience Decisions</h2>
+
+            <div class="decision-grid">
+
+                <article class="decision-card">
+                    <h3>One Prompt Per Day</h3>
+                    <p>
+                        A single daily prompt reduces decision fatigue and gives the community
+                        a shared creative focus.
+                    </p>
+                </article>
+
+                <article class="decision-card">
+                    <h3>Progressive Disclosure</h3>
+                    <p>
+                        Features are introduced gradually so new users are not overwhelmed
+                        during their first session.
+                    </p>
+                </article>
+
+                <article class="decision-card">
+                    <h3>Friends-First Feed</h3>
+                    <p>
+                        The feed focuses on friends to make creative sharing feel more personal,
+                        safe, and meaningful.
+                    </p>
+                </article>
+
+                <article class="decision-card">
+                    <h3>Multiple Response Formats</h3>
+                    <p>
+                        Text, doodle, and photo responses make the app accessible to different
+                        creative styles.
+                    </p>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- Technical decisions -->
+        <section class="case-study-section">
+            <p class="eyebrow">Technical Decisions</p>
+            <h2>How It Was Built</h2>
+
+            <div class="tech-stack-grid">
+
+                <article class="tech-card">
+                    <h3>Mobile App</h3>
+                    <p>Expo and React Native with Expo Router for app navigation.</p>
+                </article>
+
+                <article class="tech-card">
+                    <h3>API Server</h3>
+                    <p>Express API supporting auth, prompts, submissions, shop, payments, and social systems.</p>
+                </article>
+
+                <article class="tech-card">
+                    <h3>Database</h3>
+                    <p>PostgreSQL with Drizzle ORM for schema definition and typed queries.</p>
+                </article>
+
+                <article class="tech-card">
+                    <h3>Payments</h3>
+                    <p>Stripe Checkout handles credit purchases and the Plus subscription.</p>
+                </article>
+
+                <article class="tech-card">
+                    <h3>Real-Time Features</h3>
+                    <p>Server-Sent Events support live Prompt Party lobby updates.</p>
+                </article>
+
+                <article class="tech-card">
+                    <h3>Monorepo</h3>
+                    <p>pnpm workspaces organize the mobile app, API, database, shared libraries, and website.</p>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- Migration -->
+        <section class="case-study-section highlight-section">
+            <p class="eyebrow">Migration Off Replit</p>
+            <h2>Taking Ownership of the Codebase</h2>
+
+            <p>
+                ;Prompt-it was originally built and deployed through Replit. Moving it off
+                Replit means identifying which parts of the app depended on Replit-specific
+                configuration, integrations, routing, environment variables, and workflow setup.
+            </p>
+
+            <p>
+                The current migration focus is making sure the database connection, JWT secret,
+                Stripe keys, Twilio and Resend credentials, CORS settings, webhook URLs, and Expo
+                push notification settings are correctly managed outside of Replit.
+            </p>
+        </section>
+
+        <!-- What I learned -->
+        <section class="case-study-section">
+            <p class="eyebrow">What I Learned</p>
+            <h2>Lessons From This Project</h2>
+
+            <div class="lesson-grid">
+
+                <article class="lesson-card">
+                    <h3>Full-Stack Systems Are Connected</h3>
+                    <p>
+                        A change in one area can affect the app, API, database, payments,
+                        and user experience.
+                    </p>
+                </article>
+
+                <article class="lesson-card">
+                    <h3>Documentation Matters</h3>
+                    <p>
+                        Understanding a codebase starts with mapping what exists, what matters,
+                        and what can break.
+                    </p>
+                </article>
+
+                <article class="lesson-card">
+                    <h3>UX Is More Than Visual Design</h3>
+                    <p>
+                        Decisions like onboarding, progressive disclosure, and daily habit loops
+                        shape how people experience the product.
+                    </p>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- Next improvements -->
+        <section class="case-study-section">
+            <p class="eyebrow">Next Improvements</p>
+            <h2>What I Am Improving Next</h2>
+
+            <div class="priority-list">
+
+                <article class="priority-card high-priority">
+                    <p class="project-status">High Priority</p>
+                    <h3>Stability & Financial Risk Fixes</h3>
+                    <p>
+                        Add Stripe cancellation and failed payment webhooks, fix refresh token
+                        logout behavior, and make shop purchases safer with database transactions.
+                    </p>
+                </article>
+
+                <article class="priority-card medium-priority">
+                    <p class="project-status">Medium Priority</p>
+                    <h3>Maintainability</h3>
+                    <p>
+                        Unify JWT verification, improve error handling, and replace fragile
+                        startup-time migrations with tracked migration files.
+                    </p>
+                </article>
+
+                <article class="priority-card low-priority">
+                    <p class="project-status">Low Priority</p>
+                    <h3>Polish & Future Expansion</h3>
+                    <p>
+                        Improve offline states, strengthen creator program logic, and create
+                        cleaner long-term architecture documentation.
+                    </p>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- Closing CTA -->
+        <section class="case-study-closing">
+            <h2>Why This Project Matters</h2>
+            <p>
+                ;Prompt-it represents the kind of work I want to keep doing: building products
+                that combine creativity, UX thinking, technical systems, and real user value.
+            </p>
+
+            <a href="../projects.html" class="project-card-link">
+                Back to Projects
+            </a>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Dillon Williams. All rights reserved. Crafted with ❤️</p>
+    </footer>
+
+</body>
+</html>

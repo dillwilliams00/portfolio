@@ -1,0 +1,2047 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #222;
+    margin-bottom: 20px;
+    font-weight: 800;
+}
+
+h2 {
+    font-size: 1.8rem;
+    color: #444;
+    margin-top: 40px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid black;
+    padding-bottom: 5px;
+}
+
+h3 {
+    font-size: 1.3rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-seriff;
+    margin: 0;
+    padding: 40px 20px;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f9fa;
+}
+
+p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin-bottom: 10px;
+    width: 100%;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 5%;
+    padding-right: 5%;
+    z-index: 1000;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    background-color: #2c3e50;
+}
+
+.nav-title {
+    color:#ffffff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding-top: 1rem;
+}
+.nav-links {
+    display: flex;
+    list-style: none;   
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+.nav-links a {
+    text-decoration: none;
+    color: #ffffff;
+}
+.nav-links a:hover {
+    color:#9ed0fd;
+    text-decoration: underline;
+}
+
+.nav-dropdown {
+    position: relative;
+}
+
+.nav-dropdown > a {
+    display: inline-block;
+    text-decoration: #333;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    min-width: 190px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 0.5rem 0;
+    list-style: none;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(-50%, 8px);
+    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+    z-index: 1001;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 0.75rem 1rem;
+    color: #2c3e50;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.dropdown-menu a:hover {
+    background-color: #f1f3f5;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.nav-dropdown:hover .dropdown-menu,
+.nav-dropdown:focus-within .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, 0);
+}
+
+.content-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.welcome-section {
+    padding: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.project-snapshot {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 2rem;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.project-container {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    height: fit-content;
+    width: auto;
+    max-width: 1fr;
+    border: 1px solid black;
+    box-sizing: border-box;
+}
+
+.image-container {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    display: block;
+}
+
+#project-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.image-container:hover #project-image {
+    transform: scale(1.1);
+}
+
+.project-content {
+    padding: 1.5rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.project-content p {
+    text-align: left;
+    margin: 0.5rem 0;
+    line-height: 1.5;
+}
+
+.blog-card-container {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 2rem;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.blog-card {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    height: fit-content;
+    width: auto;
+    max-width: 1fr;
+    border: 1px solid black;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.blog-card p {
+    text-align: left;
+    margin: 0.5rem 0;
+    line-height: 1.5;
+}
+
+.email-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: grey;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.email-btn:hover {
+    background-color: lightgray;
+}
+
+footer {
+    margin-top: 25px;
+    justify-content: space-between;
+}
+
+.about-me {
+    width: 100%;
+    max-width: 900px;
+    margin: 6rem auto 4rem auto;
+    padding: 0 1.5rem;
+    opacity: 0;
+    animation: fadeIn 0.8s ease forwards;
+}
+
+@keyframes fadeIn {
+    to { opacity: 1;}
+}
+
+.languages {
+    width: 100vw;
+    margin: 3rem 0;
+    margin-left: calc(50% - 50vw);
+    padding: 1.25rem 2rem;
+    background-color: #2c3e50;
+}
+
+.languages h2 {
+    margin: 0 0 1rem;
+    padding: 0;
+    border-bottom: none;
+    color: #ffffff;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.languages-banner {
+    max-width: 1000px;
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 2rem;
+}
+
+.language-column {
+    flex: 1;
+    max-width: 420px;
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
+}
+
+.language-column h3 {
+    margin: 0 0 0.75rem;
+    color: #ffffff;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.current,
+.in-progress {
+    display: flex;
+    justify-content: center;
+    gap: 1.25rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.current li,
+.in-progress li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.current h2,
+.in-progress h2 {
+    margin: 0;
+    padding: 0;
+    border-bottom: none;
+    color: #ffffff;
+    font-size: 0.95rem;
+}
+
+.languages li img {
+    width: 48px;
+    height: 48px;
+}
+
+@media (max-width: 700px) {
+    .languages-banner {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .language-column {
+        max-width: 100%;
+    }
+
+    .current,
+    .in-progress {
+        gap: 1rem;
+    }
+}
+
+.learning-journey {
+    max-width: 900px;
+    margin: 4rem auto;
+    padding: 0 1.5rem;
+}
+
+.learning-journey h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    font-weight: 700;
+    color: #222;
+}
+
+.timeline {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding-left: 2rem;
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 0.45rem;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: #2c3e50;
+    border-radius: 999px;
+}
+
+.timeline-item {
+    position: relative;
+    background: #ffffff;
+    padding: 1.25rem 1.5rem;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -2.05rem;
+    top: 1.4rem;
+    width: 14px;
+    height: 14px;
+    background: #2c3e50;
+    border: 3px solid #f8f9fa;
+    border-radius: 50%;
+}
+
+.timeline-date {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #007bff;
+}
+
+.timeline-item h4 {
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    color: #222;
+}
+
+.timeline-item p {
+    margin: 0;
+    color: #555;
+}
+
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220 px, 1fr));
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+.photo-card {
+    background:#ffffff;
+    padding: 0.75rem 0.75rem 2rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+    border-radius: 4px;
+    max-width: 260px;
+    margin: 0 auto;
+    transform: rotate(-2deg);
+}
+
+.photo-card:nth-child(even) {
+    transform: rotate(2deg);
+}
+
+.photo {
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    display: block;
+}
+
+.photo-description {
+    margin-top: 1.5rem;
+    font-size: 0.95rem;
+    text-align: center;
+    color: #222;
+}
+
+.photo-date {
+    display: block;
+    margin-top: 0.35rem;
+    font-size: 0.8rem;
+    text-align: center;
+    color: #666;
+}
+
+/* ================================
+   PROJECTS PAGE
+================================ */
+
+/* 
+   Main wrapper for the whole Projects page.
+   The top margin gives space for the fixed nav.
+*/
+.projects-page {
+    max-width: 1200px;
+    margin: 7rem auto 4rem auto;
+    padding: 0 1.5rem;
+}
+
+/* 
+   Intro section at the top.
+   Keeping it narrower makes the opening text easier to read.
+*/
+.projects-hero {
+    max-width: 850px;
+    margin-bottom: 4rem;
+}
+
+.projects-hero h1 {
+    margin-bottom: 1rem;
+}
+
+.projects-hero p {
+    font-size: 1.05rem;
+}
+
+/* 
+   Small uppercase labels like:
+   Project Work, My Process, Featured Project.
+   These help sections feel intentional and easier to scan.
+*/
+.eyebrow {
+    margin-bottom: 0.5rem;
+    color: #007bff;
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+/* 
+   Reusable section header.
+   This keeps each major section consistent.
+*/
+.section-header {
+    max-width: 800px;
+    margin-bottom: 1.5rem;
+}
+
+.section-header h2 {
+    margin-top: 0;
+}
+
+/* ================================
+   PROCESS SUMMARY
+================================ */
+
+.process-summary {
+    margin-bottom: 4rem;
+}
+
+/* 
+   Four-column layout for the build process.
+   Later media queries make this responsive.
+*/
+.process-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+}
+
+/* 
+   Individual process cards.
+   These explain how you think and build, not just what you made.
+*/
+.process-card {
+    background-color: #ffffff;
+    padding: 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 14px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* 
+   The numbered step marker.
+   This gives the process a clear sequence.
+*/
+.process-number {
+    display: inline-block;
+    margin-bottom: 0.75rem;
+    color: #007bff;
+    font-weight: 800;
+}
+
+.process-card h3 {
+    margin-bottom: 0.75rem;
+}
+
+.process-card p {
+    margin-bottom: 0;
+}
+
+/* ================================
+   FEATURED PROJECT
+================================ */
+
+.featured-project {
+    margin-bottom: 4rem;
+}
+
+/* 
+   Large featured card.
+   Since ;Prompt-it is the main live product, it deserves more visual weight.
+*/
+.featured-project-card {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 0;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.1);
+}
+
+/* 
+   Image side of the featured card.
+   Placeholder image can later become a real screenshot.
+*/
+.featured-project-image {
+    min-height: 100%;
+    background-color: #f1f3f5;
+}
+
+.featured-project-image img {
+    width: 100%;
+    height: 100%;
+    min-height: 360px;
+    object-fit: cover;
+    display: block;
+}
+
+/* 
+   Text side of the featured card.
+*/
+.featured-project-content {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* 
+   Project status label.
+   This quickly tells visitors whether the project is live, active, pending, etc.
+*/
+.project-status {
+    margin-bottom: 0.5rem;
+    color: #007bff;
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+/* 
+   Tag container.
+   Tags help people quickly understand the skills involved.
+*/
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1.25rem 0;
+}
+
+/* 
+   Individual project tags.
+*/
+.project-tags span {
+    padding: 0.35rem 0.7rem;
+    background-color: #f1f3f5;
+    border-radius: 999px;
+    color: #333;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+/* 
+   Main project link.
+   Styled to feel like a button without being too heavy.
+*/
+.project-card-link {
+    display: inline-block;
+    width: fit-content;
+    margin-top: 0.5rem;
+    padding: 0.75rem 1rem;
+    background-color: #2c3e50;
+    color: #ffffff;
+    border-radius: 8px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.project-card-link:hover {
+    background-color: #1f2f3d;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+/* ================================
+   PROJECT LIBRARY / SEARCH
+================================ */
+
+.project-library {
+    margin-bottom: 4rem;
+}
+
+/* 
+   Label is visually hidden but still available to screen readers.
+   This keeps the search accessible.
+*/
+.search-label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+}
+
+/* 
+   Search input.
+   This can be made functional later with JavaScript.
+*/
+.project-search {
+    width: 100%;
+    max-width: 460px;
+    padding: 0.85rem 1rem;
+    margin-bottom: 2rem;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font: inherit;
+}
+
+.project-search:focus {
+    outline: 3px solid rgba(0, 123, 255, 0.25);
+    border-color: #007bff;
+}
+
+/* 
+   Grid for normal project cards.
+   Right now it only has ;Prompt-it, but it is ready to grow later.
+*/
+.project-card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+/* 
+   Smaller project cards.
+*/
+.project-card {
+    background-color: #ffffff;
+    padding: 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 14px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.project-card h3 {
+    margin-bottom: 0.75rem;
+}
+
+.project-card p {
+    margin-bottom: 0;
+}
+
+/* ================================
+   COMING NEXT
+================================ */
+
+.coming-next {
+    margin-bottom: 4rem;
+}
+
+/* 
+   Grid for future project cards.
+   These are not featured yet, but still show where your portfolio is heading.
+*/
+.coming-next-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+/* 
+   Lighter cards for upcoming work.
+   These should feel secondary compared to the featured ;Prompt-it card.
+*/
+.coming-card {
+    background-color: #ffffff;
+    padding: 1.5rem;
+    border: 1px dashed #bbb;
+    border-radius: 14px;
+}
+
+.coming-card h3 {
+    margin-bottom: 0.75rem;
+}
+
+.coming-card p {
+    margin-bottom: 0;
+}
+
+/* ================================
+   RESPONSIVE PROJECTS PAGE
+================================ */
+
+/* 
+   Tablet layout.
+   Process and project grids reduce from 4/3 columns to 2 columns.
+*/
+@media (max-width: 900px) {
+    .process-grid,
+    .project-card-grid,
+    .coming-next-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .featured-project-card {
+        grid-template-columns: 1fr;
+    }
+
+    .featured-project-image img {
+        min-height: 280px;
+    }
+}
+
+/* 
+   Mobile layout.
+   Everything stacks into one column.
+*/
+@media (max-width: 650px) {
+    .projects-page {
+        margin-top: 8rem;
+        padding: 0 1rem;
+    }
+
+    .process-grid,
+    .project-card-grid,
+    .coming-next-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .featured-project-content {
+        padding: 1.5rem;
+    }
+
+    .project-search {
+        max-width: 100%;
+    }
+}
+
+/* ================================
+   PROMPT-IT CASE STUDY PAGE
+================================ */
+
+/* 
+   Main page wrapper.
+   The margin-top creates space under the fixed navigation.
+*/
+.case-study-page {
+    max-width: 1200px;
+    margin: 7rem auto 4rem auto;
+    padding: 0 1.5rem;
+}
+
+/* 
+   Back link at the top of the case study.
+   Helps users return to the main Projects page easily.
+*/
+.back-link {
+    display: inline-block;
+    margin-bottom: 2rem;
+    font-weight: 700;
+    color: #007bff;
+}
+
+/* 
+   Hero section for the case study.
+   This introduces the project and sets the tone.
+*/
+.case-study-hero {
+    max-width: 900px;
+    margin-bottom: 3rem;
+}
+
+.case-study-hero h1 {
+    margin-bottom: 1rem;
+}
+
+/* 
+   Larger intro paragraph.
+   This gives the project summary more visual weight.
+*/
+.case-study-intro {
+    font-size: 1.1rem;
+    max-width: 850px;
+}
+
+/* 
+   Tags near the top of the case study.
+   These quickly communicate the skills and technologies involved.
+*/
+.case-study-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+}
+
+.case-study-tags span {
+    padding: 0.4rem 0.75rem;
+    background-color: #f1f3f5;
+    border-radius: 999px;
+    color: #333;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+/* ================================
+   CASE STUDY OVERVIEW CARDS
+================================ */
+
+/*
+   Three-card snapshot section.
+   This gives quick context before the deeper explanation.
+*/
+.project-overview-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.overview-card {
+    background-color: #ffffff;
+    padding: 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 14px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.overview-card h2 {
+    margin-top: 0;
+    font-size: 1.25rem;
+}
+
+.overview-card p {
+    margin-bottom: 0;
+}
+
+/* ================================
+   CASE STUDY IMAGE
+================================ */
+
+/*
+   Large image preview.
+   Later, replace the placeholder with a real app screenshot or mockup.
+*/
+.case-study-image-section {
+    margin-bottom: 4rem;
+}
+
+.case-study-image {
+    width: 100%;
+    max-height: 650px;
+    object-fit: cover;
+    border-radius: 18px;
+    border: 1px solid #ddd;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.1);
+}
+
+/* ================================
+   GENERAL CASE STUDY SECTIONS
+================================ */
+
+/*
+   Reusable content sections.
+   Keeping sections consistent makes a long case study easier to scan.
+*/
+.case-study-section {
+    max-width: 1000px;
+    margin: 0 auto 4rem auto;
+}
+
+.case-study-section h2 {
+    margin-top: 0;
+}
+
+.case-study-section p {
+    font-size: 1rem;
+}
+
+/* 
+   Highlighted section for important context like migration.
+*/
+.highlight-section {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-left: 6px solid #007bff;
+    border-radius: 14px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* ================================
+   CARD GRIDS
+================================ */
+
+/*
+   Reusable three-card grid used for users, lessons, and similar sections.
+*/
+.case-study-card-grid,
+.lesson-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.case-study-card,
+.lesson-card {
+    background-color: #ffffff;
+    padding: 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 14px;
+}
+
+.case-study-card h3,
+.lesson-card h3 {
+    margin-bottom: 0.75rem;
+}
+
+.case-study-card p,
+.lesson-card p {
+    margin-bottom: 0;
+}
+
+/* ================================
+   FEATURE LIST
+================================ */
+
+/*
+   Vertical feature list.
+   This is easier to read than a huge paragraph of app features.
+*/
+.feature-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.feature-row {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1rem;
+    align-items: start;
+
+    background-color: #ffffff;
+    padding: 1.25rem;
+    border: 1px solid #ddd;
+    border-radius: 14px;
+}
+
+/*
+   Number badge for each feature.
+*/
+.feature-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 42px;
+    height: 42px;
+
+    background-color: #2c3e50;
+    color: #ffffff;
+    border-radius: 50%;
+
+    font-size: 0.85rem;
+    font-weight: 800;
+}
+
+.feature-row h3 {
+    margin-bottom: 0.35rem;
+}
+
+.feature-row p {
+    margin-bottom: 0;
+}
+
+/* ================================
+   CASE STUDY TIMELINE
+================================ */
+
+/*
+   Timeline for build phases.
+   Similar concept to your About page timeline, but scoped to this case study.
+*/
+.case-timeline {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding-left: 2rem;
+}
+
+.case-timeline::before {
+    content: "";
+    position: absolute;
+    left: 0.45rem;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background-color: #2c3e50;
+    border-radius: 999px;
+}
+
+.case-timeline-item {
+    position: relative;
+    background-color: #ffffff;
+    padding: 1.25rem 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 14px;
+}
+
+.case-timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -2.05rem;
+    top: 1.4rem;
+    width: 14px;
+    height: 14px;
+    background-color: #2c3e50;
+    border: 3px solid #f8f9fa;
+    border-radius: 50%;
+}
+
+.case-timeline-item span {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    color: #007bff;
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.case-timeline-item h3 {
+    margin-bottom: 0.5rem;
+}
+
+.case-timeline-item p {
+    margin-bottom: 0;
+}
+
+/* ================================
+   DECISION + TECH GRIDS
+================================ */
+
+/*
+   Two-column decision grid.
+   Good for short explanations of UX choices.
+*/
+.decision-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.decision-card {
+    background-color: #ffffff;
+    padding: 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 14px;
+}
+
+.decision-card h3 {
+    margin-bottom: 0.75rem;
+}
+
+.decision-card p {
+    margin-bottom: 0;
+}
+
+/*
+   Technical cards.
+   These explain architecture without dumping too much code detail.
+*/
+.tech-stack-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.tech-card {
+    background-color: #ffffff;
+    padding: 1.5rem;
+    border-top: 5px solid #2c3e50;
+    border-radius: 14px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+}
+
+.tech-card h3 {
+    margin-bottom: 0.75rem;
+}
+
+.tech-card p {
+    margin-bottom: 0;
+}
+
+/* ================================
+   NEXT IMPROVEMENTS
+================================ */
+
+/*
+   Priority cards for future work.
+   This shows that the project is active and you know what needs attention next.
+*/
+.priority-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.priority-card {
+    background-color: #ffffff;
+    padding: 1.5rem;
+    border-radius: 14px;
+    border: 1px solid #ddd;
+}
+
+.priority-card h3 {
+    margin-bottom: 0.75rem;
+}
+
+.priority-card p:last-child {
+    margin-bottom: 0;
+}
+
+/*
+   Subtle priority indicators.
+   These use borders instead of loud colors so the page stays clean.
+*/
+.high-priority {
+    border-top: 5px solid #c0392b;
+}
+
+.medium-priority {
+    border-top: 5px solid #d68910;
+}
+
+.low-priority {
+    border-top: 5px solid #2c3e50;
+}
+
+/* ================================
+   CLOSING SECTION
+================================ */
+
+.case-study-closing {
+    max-width: 850px;
+    margin: 5rem auto 0 auto;
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 18px;
+    border: 1px solid #ddd;
+    text-align: center;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+}
+
+.case-study-closing h2 {
+    margin-top: 0;
+}
+
+.case-study-closing p {
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ================================
+   RESPONSIVE CASE STUDY PAGE
+================================ */
+
+/*
+   Tablet layout.
+*/
+@media (max-width: 900px) {
+    .project-overview-grid,
+    .case-study-card-grid,
+    .lesson-grid,
+    .tech-stack-grid,
+    .priority-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/*
+   Mobile layout.
+*/
+@media (max-width: 650px) {
+    .case-study-page {
+        margin-top: 8rem;
+        padding: 0 1rem;
+    }
+
+    .project-overview-grid,
+    .case-study-card-grid,
+    .lesson-grid,
+    .decision-grid,
+    .tech-stack-grid,
+    .priority-list {
+        grid-template-columns: 1fr;
+    }
+
+    .feature-row {
+        grid-template-columns: 1fr;
+    }
+
+    .feature-number {
+        width: 38px;
+        height: 38px;
+    }
+
+    .highlight-section,
+    .case-study-closing {
+        padding: 1.5rem;
+    }
+}
+
+/* ================================
+   PRICING / SERVICES PAGE
+================================ */
+
+/*
+   Main wrapper for the pricing page.
+   The top margin gives room for the fixed nav.
+*/
+.pricing-page {
+    max-width: 1200px;
+    margin: 7rem auto 4rem auto;
+    padding: 0 1.5rem;
+}
+
+/*
+   Hero section.
+   This introduces the value behind the services before showing prices.
+*/
+.pricing-hero {
+    max-width: 900px;
+    margin-bottom: 4rem;
+}
+
+.pricing-hero h1 {
+    margin-bottom: 1rem;
+}
+
+.pricing-hero p {
+    font-size: 1.05rem;
+}
+
+/* ================================
+   VALUE SECTION
+================================ */
+
+/*
+   Explains what clients are paying for besides "a website."
+*/
+.service-value {
+    margin-bottom: 4rem;
+}
+
+.value-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.value-card {
+    background-color: #ffffff;
+    padding: 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 14px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.value-number {
+    display: inline-block;
+    margin-bottom: 0.75rem;
+    color: #007bff;
+    font-weight: 800;
+}
+
+.value-card h3 {
+    margin-bottom: 0.75rem;
+}
+
+.value-card p {
+    margin-bottom: 0;
+}
+
+/* ================================
+   PRICING PACKAGES
+================================ */
+
+.pricing-packages {
+    margin-bottom: 4rem;
+}
+
+/*
+   Three-column package layout.
+*/
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+/*
+   Individual pricing cards.
+*/
+.pricing-card {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    padding: 1.75rem;
+    border: 1px solid #ddd;
+    border-radius: 18px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+/*
+   Highlights the Growth package as the recommended middle option.
+*/
+.featured-pricing-card {
+    border: 2px solid #007bff;
+    transform: translateY(-8px);
+}
+
+/*
+   Small label at the top of each pricing card.
+*/
+.package-label {
+    margin-bottom: 0.5rem;
+    color: #007bff;
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.pricing-card h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #222;
+}
+
+.package-summary {
+    margin-bottom: 1.25rem;
+}
+
+/*
+   Package feature list.
+   This is one place where bullets are useful because clients scan pricing cards quickly.
+*/
+.package-list {
+    margin: 0 0 1.5rem 0;
+    padding-left: 1.25rem;
+    color: #444;
+}
+
+.package-list li {
+    margin-bottom: 0.5rem;
+}
+
+/*
+   Pushes the button toward the bottom if one card has more text than another.
+*/
+.pricing-card .project-card-link {
+    margin-top: auto;
+}
+
+/* ================================
+   ADD-ONS
+================================ */
+
+.add-ons-section {
+    margin-bottom: 4rem;
+}
+
+.add-ons-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+}
+
+.add-on-card {
+    background-color: #ffffff;
+    padding: 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 14px;
+}
+
+.add-on-card h3 {
+    margin-bottom: 0.75rem;
+}
+
+.add-on-card p {
+    margin-bottom: 0;
+}
+
+/* ================================
+   SERVICE PROCESS
+================================ */
+
+.service-process {
+    margin-bottom: 4rem;
+}
+
+.service-process-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+}
+
+/*
+   Process step cards.
+   These help clients understand how working together will feel.
+*/
+.service-step {
+    background-color: #ffffff;
+    padding: 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 14px;
+}
+
+.service-step span {
+    display: inline-block;
+    margin-bottom: 0.75rem;
+    color: #007bff;
+    font-weight: 800;
+}
+
+.service-step h3 {
+    margin-bottom: 0.75rem;
+}
+
+.service-step p {
+    margin-bottom: 0;
+}
+
+/* ================================
+   PAYMENT SECTION
+================================ */
+
+.payment-section {
+    margin-bottom: 4rem;
+}
+
+/*
+   Payment card gives the terms a clear, trustworthy presentation.
+*/
+.payment-card {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-left: 6px solid #007bff;
+    border-radius: 18px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.payment-card h2 {
+    margin-top: 0;
+}
+
+.payment-split {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.payment-split div {
+    background-color: #f8f9fa;
+    padding: 1.25rem;
+    border-radius: 12px;
+}
+
+.payment-split h3 {
+    margin-bottom: 0.5rem;
+}
+
+.payment-split p {
+    margin-bottom: 0;
+}
+
+/* ================================
+   QUOTE FORM
+================================ */
+
+.quote-section {
+    margin-bottom: 4rem;
+}
+
+/*
+   Main form container.
+*/
+.quote-form {
+    background-color: #ffffff;
+    padding: 2rem;
+    border: 1px solid #ddd;
+    border-radius: 18px;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+}
+
+/*
+   Two-column layout for shorter form fields.
+*/
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+}
+
+/*
+   Groups label + input together.
+*/
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.25rem;
+}
+
+.form-group label,
+.checkbox-group legend {
+    margin-bottom: 0.5rem;
+    color: #222;
+    font-weight: 700;
+}
+
+/*
+   Shared input styling.
+*/
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font: inherit;
+    color: #333;
+    background-color: #ffffff;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+/*
+   Strong visible focus state for accessibility.
+*/
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: 3px solid rgba(0, 123, 255, 0.25);
+    border-color: #007bff;
+}
+
+/*
+   Checkbox group for add-ons.
+*/
+.checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin: 0 0 1.25rem 0;
+    padding: 1.25rem;
+    border: 1px solid #ddd;
+    border-radius: 14px;
+}
+
+.checkbox-group label {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    color: #444;
+}
+
+.checkbox-group input {
+    width: auto;
+}
+
+/*
+   Submit button.
+*/
+.quote-submit-btn {
+    display: inline-block;
+    padding: 0.85rem 1.25rem;
+    background-color: #2c3e50;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.quote-submit-btn:hover {
+    background-color: #1f2f3d;
+}
+
+/* ================================
+   RESPONSIVE PRICING PAGE
+================================ */
+
+/*
+   Tablet layout.
+*/
+@media (max-width: 950px) {
+    .value-grid,
+    .pricing-grid,
+    .add-ons-grid,
+    .service-process-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .featured-pricing-card {
+        transform: none;
+    }
+}
+
+/*
+   Mobile layout.
+*/
+@media (max-width: 650px) {
+    .pricing-page {
+        margin-top: 8rem;
+        padding: 0 1rem;
+    }
+
+    .value-grid,
+    .pricing-grid,
+    .add-ons-grid,
+    .service-process-grid,
+    .payment-split,
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .quote-form,
+    .payment-card {
+        padding: 1.5rem;
+    }
+}
+
+/* ================================
+   HOMEPAGE REVAMP
+================================ */
+
+/*
+   Global polish.
+   This removes the body padding that was making spacing inconsistent
+   with the newer pages.
+*/
+body {
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/*
+   Removes the old global underline from h2 headings.
+   The newer page sections use spacing, cards, and labels instead.
+*/
+h2 {
+    border-bottom: none;
+}
+
+/*
+   Main homepage wrapper.
+   The top margin creates space below the fixed nav.
+*/
+.home-page {
+    max-width: 1200px;
+    margin: 9rem auto 4rem auto;
+    padding: 0 1.5rem;
+}
+
+/* ================================
+   HOME HERO
+================================ */
+
+.home-hero {
+    display: grid;
+    grid-template-columns: 1.4fr 0.8fr;
+    gap: 2rem;
+    align-items: center;
+    margin-bottom: 5rem;
+}
+
+.home-hero-content {
+    max-width: 850px;
+}
+
+.home-hero h1 {
+    max-width: 900px;
+    margin-bottom: 1.25rem;
+    font-size: clamp(2.5rem, 6vw, 4.75rem);
+    line-height: 1.05;
+    letter-spacing: -0.05em;
+}
+
+.home-hero-intro {
+    max-width: 760px;
+    font-size: 1.1rem;
+}
+
+.home-hero-actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1.75rem;
+}
+
+.secondary-link {
+    display: inline-block;
+    font-weight: 800;
+    color: #2c3e50;
+}
+
+.secondary-link:hover {
+    color: #007bff;
+}
+
+/*
+   Right-side hero card.
+   This makes the homepage immediately connect to your live product.
+*/
+.home-hero-card {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 18px;
+    border: 1px solid #ddd;
+    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.1);
+}
+
+.home-hero-card h2 {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    color: #222;
+}
+
+/* ================================
+   HOME VALUES
+================================ */
+
+.home-values {
+    margin-bottom: 5rem;
+}
+
+.home-value-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.home-value-card {
+    background-color: #ffffff;
+    padding: 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 14px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.home-value-card h3 {
+    margin-bottom: 0.75rem;
+}
+
+.home-value-card p {
+    margin-bottom: 0;
+}
+
+/* ================================
+   HOME FEATURED WORK
+================================ */
+
+.home-featured-work {
+    margin-bottom: 5rem;
+}
+
+.home-featured-card {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.1);
+}
+
+.home-featured-image {
+    background-color: #f1f3f5;
+}
+
+.home-featured-image img {
+    width: 100%;
+    height: 100%;
+    min-height: 360px;
+    object-fit: cover;
+    display: block;
+}
+
+.home-featured-content {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.home-featured-content h3 {
+    font-size: 1.6rem;
+    margin-bottom: 0.75rem;
+}
+
+/* ================================
+   COMMIT HISTORY PREVIEW
+================================ */
+
+.commit-history-preview {
+    margin-bottom: 5rem;
+}
+
+.commit-card-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 1.5rem;
+}
+
+.commit-card {
+    background-color: #ffffff;
+    padding: 1.75rem;
+    border: 1px solid #ddd;
+    border-radius: 18px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.commit-card h3 {
+    margin-bottom: 0.75rem;
+}
+
+.commit-card p {
+    margin-bottom: 1rem;
+}
+
+.commit-card-muted {
+    border-style: dashed;
+    box-shadow: none;
+    background-color: #fbfbfc;
+}
+
+/* ================================
+   SERVICES CTA
+================================ */
+
+.home-services-cta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+
+    margin-bottom: 5rem;
+    padding: 2rem;
+
+    background-color: #ffffff;
+    border-left: 6px solid #007bff;
+    border-radius: 18px;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+}
+
+.home-services-cta div {
+    max-width: 760px;
+}
+
+.home-services-cta h2 {
+    margin-top: 0;
+}
+
+/* ================================
+   HOME CONTACT
+================================ */
+
+.home-contact {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 18px;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+}
+
+.home-contact h2 {
+    margin-top: 0;
+}
+
+/* ================================
+   HOMEPAGE RESPONSIVE STYLES
+================================ */
+
+@media (max-width: 900px) {
+    .home-hero,
+    .home-featured-card,
+    .commit-card-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .home-value-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .home-services-cta {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .home-featured-image img {
+        min-height: 280px;
+    }
+}
+
+@media (max-width: 650px) {
+    .home-page {
+        margin-top: 8rem;
+        padding: 0 1rem;
+    }
+
+    .home-value-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .home-hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .home-hero-card,
+    .home-featured-content,
+    .commit-card,
+    .home-services-cta,
+    .home-contact {
+        padding: 1.5rem;
+    }
+}

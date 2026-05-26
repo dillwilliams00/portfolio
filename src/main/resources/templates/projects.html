@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Makes the page scale correctly on mobile screens -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Projects | Dillon Williams</title>
+
+    <!-- Connects this page to your main stylesheet -->
+    <link href="../static/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Main navigation -->
+    <nav class="nav">
+        <h1 class="nav-title">DW Portfolio</h1>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+
+            <li><a href="projects.html">Projects</a></li>
+
+            <li class="nav-dropdown">
+                <a href="about.html">About</a>
+
+                <ul class="dropdown-menu">
+                    <li><a href="about.html">About Me</a></li>
+                    <li><a href="about.html#learning-journey">Learning Journey</a></li>
+                    <li>
+                        <a href="../assets/resume.pdf" target="_blank" rel="noopener noreferrer">
+                            Resume PDF
+                        </a>
+                    </li>
+                </ul>
+            </li>
+
+            <li><a href="pricing.html">Pricing</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main page content -->
+    <main class="projects-page">
+
+        <!-- Page intro -->
+    <section class="projects-hero">
+        <p class="eyebrow">Build Archive</p>
+
+        <h1>From Idea to Iteration</h1>
+
+        <p>
+        This space documents how I research, design, build, migrate, and improve real products.
+        Right now, my main focus is ;Prompt-it — a live full-stack product that I am actively
+        updating, documenting, and refining as I continue growing as a developer.
+        </p>
+    </section>
+
+        <!-- Process summary -->
+        <section class="process-summary">
+            <div class="section-header">
+                <p class="eyebrow">My Process</p>
+                <h2>How I Approach a Build</h2>
+                <p>
+                    I use each project as both a product and a learning opportunity.
+                    The goal is not only to ship something useful, but to understand
+                    the decisions behind the build.
+                </p>
+            </div>
+
+            <div class="process-grid">
+
+                <article class="process-card">
+                    <span class="process-number">01</span>
+                    <h3>Define</h3>
+                    <p>
+                        I start by clarifying the problem, the target users, and the reason
+                        the product needs to exist.
+                    </p>
+                </article>
+
+                <article class="process-card">
+                    <span class="process-number">02</span>
+                    <h3>Design</h3>
+                    <p>
+                        I think through the user experience, page structure, flows,
+                        accessibility, and visual direction before building deeper features.
+                    </p>
+                </article>
+
+                <article class="process-card">
+                    <span class="process-number">03</span>
+                    <h3>Build</h3>
+                    <p>
+                        I develop in stages, starting with structure and layout before
+                        moving into interactivity, backend logic, and database work.
+                    </p>
+                </article>
+
+                <article class="process-card">
+                    <span class="process-number">04</span>
+                    <h3>Improve</h3>
+                    <p>
+                        I document what worked, what broke, what I learned, and what needs
+                        to be improved in the next version.
+                    </p>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- Featured project -->
+        <section class="featured-project">
+            <div class="section-header">
+                <p class="eyebrow">Featured Project</p>
+                <h2>;Prompt-it</h2>
+                <p>
+                    A live full-stack creativity platform built around daily prompts,
+                    community interaction, a credit economy, subscriptions, and creative
+                    game modes.
+                </p>
+            </div>
+
+            <article class="featured-project-card">
+
+                <div class="featured-project-image">
+                    <img 
+                        src="https://picsum.photos/900/600" 
+                        alt="Placeholder image for ;Prompt-it project preview"
+                    >
+                </div>
+
+                <div class="featured-project-content">
+                    <p class="project-status">Live Product · Active Build</p>
+
+                    <h3>;Prompt-it</h3>
+
+                    <p>
+                        ;Prompt-it is a daily creativity app where users respond to rotating
+                        prompts through text, doodles, or photos. The app includes a community
+                        feed, direct messaging, Prompt Party, Storybook Mode, missions, streaks,
+                        a shop, and a Plus subscription.
+                    </p>
+
+                    <div class="project-tags" aria-label="Project categories">
+                        <span>Full-Stack</span>
+                        <span>UX Design</span>
+                        <span>Migration</span>
+                        <span>React Native</span>
+                        <span>PostgreSQL</span>
+                        <span>Stripe</span>
+                    </div>
+
+                    <a href="projects/prompt-it.html" class="project-card-link">
+                        View Case Study
+                    </a>
+                </div>
+
+            </article>
+        </section>
+
+        <!-- Project search / library placeholder -->
+        <section class="project-library">
+            <div class="section-header">
+                <p class="eyebrow">Project Library</p>
+                <h2>Search Projects</h2>
+                <p>
+                    This section will become searchable as I add JavaScript. For now, it
+                    introduces the structure I will use as more projects become ready to feature.
+                </p>
+            </div>
+
+            <label for="projectSearch" class="search-label">Search project cards</label>
+
+            <input 
+                type="search"
+                id="projectSearch"
+                class="project-search"
+                placeholder="Search projects..."
+            >
+
+            <div class="project-card-grid">
+
+                <article class="project-card">
+                    <p class="project-status">Featured</p>
+                    <h3>;Prompt-it</h3>
+                    <p>
+                        A live full-stack product focused on daily creativity, social engagement,
+                        payments, game modes, and ongoing product iteration.
+                    </p>
+
+                    <div class="project-tags">
+                        <span>Live</span>
+                        <span>Full-Stack</span>
+                        <span>Active</span>
+                    </div>
+
+                    <a href="projects/prompt-it.html" class="project-card-link">
+                        View Project
+                    </a>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- Future projects -->
+        <section class="coming-next">
+            <div class="section-header">
+                <p class="eyebrow">Coming Next</p>
+                <h2>Projects I’ll Feature Later</h2>
+                <p>
+                    These projects are part of my larger build path, but they will be featured
+                    after they are migrated, documented, or ready to explain clearly.
+                </p>
+            </div>
+
+            <div class="coming-next-grid">
+
+                <article class="coming-card">
+                    <p class="project-status">Migration Pending</p>
+                    <h3>Relational Self</h3>
+                    <p>
+                        A self-reflection product focused on relationship patterns,
+                        nervous system insights, and personalized emotional growth.
+                    </p>
+                </article>
+
+                <article class="coming-card">
+                    <p class="project-status">Active Learning Project</p>
+                    <h3>Portfolio Website</h3>
+                    <p>
+                        This portfolio is being built from scratch as a learning lab for
+                        HTML, CSS, JavaScript, backend development, and SQL.
+                    </p>
+                </article>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Dillon Williams. All rights reserved. Crafted with ❤️</p>
+    </footer>
+
+</body>
+</html>
