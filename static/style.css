@@ -2163,3 +2163,533 @@ h2 {
         flex-direction: column;
     }
 }
+
+/* ================================
+   MOBILE RESPONSIVE OVERRIDES
+   Paste this at the very bottom of style.css
+================================ */
+
+/* Tablet and smaller screens */
+@media (max-width: 900px) {
+
+    /* ---------- General page spacing ---------- */
+
+    .home-page,
+    .about-me,
+    .projects-page,
+    .pricing-page,
+    .case-study-page,
+    .thank-you-page {
+        margin-top: 8.5rem;
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+    }
+
+    .section-header {
+        max-width: 100%;
+    }
+
+    h1 {
+        line-height: 1.1;
+    }
+
+    h2 {
+        line-height: 1.2;
+    }
+
+    p {
+        line-height: 1.65;
+    }
+
+
+    /* ---------- Navigation ---------- */
+
+    .nav {
+        padding: 1rem 1.25rem;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .nav-title {
+        font-size: 1.2rem;
+    }
+
+    .nav-links {
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+    }
+
+    .dropdown-menu {
+        left: 50%;
+        min-width: 180px;
+    }
+
+
+    /* ---------- Homepage ---------- */
+
+    .home-hero,
+    .home-featured-card,
+    .commit-card-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .home-hero {
+        gap: 2rem;
+        margin-bottom: 4rem;
+    }
+
+    .home-hero h1 {
+        font-size: clamp(2.4rem, 8vw, 4rem);
+    }
+
+    .home-hero-card,
+    .home-featured-content,
+    .commit-card,
+    .home-services-cta,
+    .home-contact {
+        padding: 1.5rem;
+    }
+
+    .home-value-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .home-services-cta {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .home-featured-image img {
+        min-height: 280px;
+    }
+
+
+    /* ---------- About page ---------- */
+
+    .languages-banner {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .language-column {
+        max-width: 100%;
+    }
+
+    .current,
+    .in-progress {
+        flex-wrap: wrap;
+    }
+
+    .timeline {
+        padding-left: 1.5rem;
+    }
+
+    .timeline-item {
+        padding: 1.25rem;
+    }
+
+    .snapshots-section {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+    }
+
+    .photo-gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    /* ---------- Projects page ---------- */
+
+    .process-grid,
+    .project-card-grid,
+    .coming-next-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .featured-project-card {
+        grid-template-columns: 1fr;
+    }
+
+    .featured-project-image img {
+        min-height: 280px;
+    }
+
+
+    /* ---------- Prompt-it case study ---------- */
+
+    .project-overview-grid,
+    .case-study-card-grid,
+    .lesson-grid,
+    .tech-stack-grid,
+    .priority-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .decision-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .case-study-image {
+        max-height: 420px;
+    }
+
+
+    /* ---------- Pricing page ---------- */
+
+    .value-grid,
+    .pricing-grid,
+    .add-ons-grid,
+    .service-process-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .featured-pricing-card {
+        transform: none;
+    }
+
+    .payment-split,
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* Phone screens */
+@media (max-width: 650px) {
+
+    /* ---------- General ---------- */
+
+    body {
+        overflow-x: hidden;
+    }
+
+    .home-page,
+    .about-me,
+    .projects-page,
+    .pricing-page,
+    .case-study-page,
+    .thank-you-page {
+        margin-top: 9.5rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    section {
+        margin-bottom: 3rem;
+    }
+
+    .section-header {
+        margin-bottom: 1.5rem;
+    }
+
+    .eyebrow {
+        font-size: 0.75rem;
+    }
+
+    h1 {
+        font-size: clamp(2.1rem, 10vw, 3rem);
+    }
+
+    h2 {
+        font-size: 1.6rem;
+    }
+
+    h3 {
+        font-size: 1.15rem;
+    }
+
+
+    /* ---------- Navigation ---------- */
+
+    .nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem;
+    }
+
+    .nav-title {
+        margin-bottom: 0.25rem;
+    }
+
+    .nav-links {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap: 0.75rem 1rem;
+    }
+
+    .nav-links a {
+        font-size: 0.95rem;
+    }
+
+    .dropdown-menu {
+        left: 0;
+        transform: translateY(8px);
+        min-width: 190px;
+    }
+
+    .nav-dropdown:hover .dropdown-menu,
+    .nav-dropdown:focus-within .dropdown-menu {
+        transform: translateY(0);
+    }
+
+
+    /* ---------- Buttons / links ---------- */
+
+    .project-card-link,
+    .quote-submit-btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .home-hero-actions,
+    .thank-you-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .secondary-link {
+        text-align: center;
+    }
+
+
+    /* ---------- Homepage ---------- */
+
+    .home-hero {
+        margin-bottom: 3.5rem;
+    }
+
+    .home-hero h1 {
+        font-size: clamp(2.3rem, 12vw, 3.25rem);
+    }
+
+    .home-hero-intro {
+        font-size: 1rem;
+    }
+
+    .home-value-grid,
+    .commit-card-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .home-hero-card,
+    .home-value-card,
+    .home-featured-content,
+    .commit-card,
+    .home-services-cta,
+    .home-contact {
+        padding: 1.35rem;
+    }
+
+    .home-featured-image img {
+        min-height: 230px;
+    }
+
+
+    /* ---------- About page ---------- */
+
+    .about-me {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .languages {
+        padding: 1.25rem 1rem;
+    }
+
+    .languages h2 {
+        font-size: 1.35rem;
+    }
+
+    .current,
+    .in-progress {
+        gap: 1rem;
+    }
+
+    .languages li img {
+        width: 42px;
+        height: 42px;
+    }
+
+    .timeline {
+        gap: 1.5rem;
+        padding-left: 1.25rem;
+    }
+
+    .timeline::before {
+        left: 0.35rem;
+    }
+
+    .timeline-item::before {
+        left: -1.75rem;
+    }
+
+    .photo-gallery {
+        grid-template-columns: 1fr;
+        padding-top: 1rem;
+    }
+
+
+    /* ---------- Projects page ---------- */
+
+    .process-grid,
+    .project-card-grid,
+    .coming-next-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .process-card,
+    .project-card,
+    .coming-card,
+    .featured-project-content {
+        padding: 1.35rem;
+    }
+
+    .featured-project-image img {
+        min-height: 230px;
+    }
+
+    .project-search {
+        max-width: 100%;
+    }
+
+
+    /* ---------- Prompt-it case study ---------- */
+
+    .project-overview-grid,
+    .case-study-card-grid,
+    .lesson-grid,
+    .decision-grid,
+    .tech-stack-grid,
+    .priority-list {
+        grid-template-columns: 1fr;
+    }
+
+    .case-study-tags,
+    .project-tags {
+        gap: 0.45rem;
+    }
+
+    .case-study-tags span,
+    .project-tags span {
+        font-size: 0.75rem;
+    }
+
+    .feature-row {
+        grid-template-columns: 1fr;
+        padding: 1.25rem;
+    }
+
+    .feature-number {
+        width: 38px;
+        height: 38px;
+    }
+
+    .case-timeline {
+        padding-left: 1.25rem;
+    }
+
+    .case-timeline::before {
+        left: 0.35rem;
+    }
+
+    .case-timeline-item::before {
+        left: -1.75rem;
+    }
+
+    .highlight-section,
+    .case-study-closing {
+        padding: 1.5rem;
+    }
+
+    .case-study-image {
+        max-height: 300px;
+    }
+
+
+    /* ---------- Pricing page ---------- */
+
+    .value-grid,
+    .pricing-grid,
+    .add-ons-grid,
+    .service-process-grid,
+    .payment-split,
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .pricing-card,
+    .value-card,
+    .add-on-card,
+    .service-step,
+    .payment-card,
+    .quote-form {
+        padding: 1.35rem;
+    }
+
+    .pricing-card h3 {
+        font-size: 1.8rem;
+    }
+
+    .package-list {
+        padding-left: 1.1rem;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        font-size: 1rem;
+    }
+
+
+    /* ---------- Thank you page ---------- */
+
+    .thank-you-card {
+        padding: 2rem 1.35rem;
+    }
+
+
+    /* ---------- Footer ---------- */
+
+    footer {
+        padding: 1.5rem 1rem;
+        text-align: center;
+    }
+}
+
+
+/* Very small screens */
+@media (max-width: 420px) {
+
+    .nav-links {
+        gap: 0.6rem 0.85rem;
+    }
+
+    .nav-links a {
+        font-size: 0.9rem;
+    }
+
+    .home-page,
+    .about-me,
+    .projects-page,
+    .pricing-page,
+    .case-study-page,
+    .thank-you-page {
+        margin-top: 10rem;
+    }
+
+    .home-hero h1 {
+        font-size: 2.25rem;
+    }
+
+    .project-tags span,
+    .case-study-tags span {
+        font-size: 0.72rem;
+    }
+
+    .dropdown-menu {
+        min-width: 175px;
+    }
+}
