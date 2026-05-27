@@ -2911,3 +2911,26 @@ h2 {
         height: 460px;
     }
 }
+
+/* ================================
+   PROMPT-IT PAGE IMAGE FIX
+================================ */
+
+.prompt-it-screen-card img,
+.case-study-page img.case-study-image {
+    width: 100%;
+    height: auto;
+    max-height: 720px;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+    background-color: #f8f9fa;
+}
+
+@media (max-width: 650px) {
+    .prompt-it-screen-card img,
+    .case-study-page img.case-study-image {
+        height: 520px;
+        object-fit: contain;
+    }
+}
