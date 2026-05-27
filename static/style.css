@@ -2934,3 +2934,15 @@ h2 {
         object-fit: contain;
     }
 }
+
+.nav-contact {
+    padding: 0.45rem 0.85rem;
+    border: 1px solid #ffffff;
+    border-radius: 999px; 
+}
+
+.nav-contact:hover {
+    background-color: #ffffff;
+    color: #2c3e50;
+    text-decoration: none;
+}
