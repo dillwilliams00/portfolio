@@ -87,6 +87,15 @@ nav {
     font-weight: bold;
     padding-top: 1rem;
 }
+
+.nav-title a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.nav-title a:hover {
+    color: #9ed0fd;
+}
 .nav-links {
     display: flex;
     list-style: none;   
