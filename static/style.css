@@ -2901,13 +2901,16 @@ h2 {
     font-size: 0.95rem;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 650px) {
     .prompt-it-gallery {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr;
     }
 
     .prompt-it-screen-card img {
-        height: 380px;
+        width: 100%;
+        height: auto;
+        max-height: 520px;
+        object-fit: contain;
     }
 }
 
@@ -2939,7 +2942,9 @@ h2 {
 @media (max-width: 650px) {
     .prompt-it-screen-card img,
     .case-study-page img.case-study-image {
-        height: 520px;
+        width: 100%;
+        height: auto;
+        max-height: 520px;
         object-fit: contain;
     }
 }
