@@ -2852,3 +2852,62 @@ h2 {
         margin-top: 6.5rem;
     }
 }
+
+/* ================================
+   PROMPT-IT SCREEN GALLERY
+================================ */
+
+.prompt-it-gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+}
+
+.prompt-it-screen-card {
+    overflow: hidden;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 18px;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+}
+
+.prompt-it-screen-card img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    object-position: top;
+    display: block;
+    background-color: #f4f4f4;
+}
+
+.screen-card-content {
+    padding: 1.25rem;
+}
+
+.screen-card-content h3 {
+    margin-bottom: 0.5rem;
+}
+
+.screen-card-content p {
+    font-size: 0.95rem;
+}
+
+@media (max-width: 900px) {
+    .prompt-it-gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .prompt-it-screen-card img {
+        height: 380px;
+    }
+}
+
+@media (max-width: 650px) {
+    .prompt-it-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .prompt-it-screen-card img {
+        height: 460px;
+    }
+}
