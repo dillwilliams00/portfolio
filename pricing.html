@@ -332,11 +332,21 @@
                 Later, this can be replaced with a backend route, Google Form, or form service.
             -->
             <form 
+                name="quote-request"
                 class="quote-form"
-                action="mailto:dill.williams00@gmail.com"
-                method="post"
-                enctype="text/plain"
+                method="POST"
+                data-netlify="true"
+                netlify-honeypot="bot-field"
+                action="/thank-you.html"
             >
+            <input type="hidden" name="form-name" value="quote-request">
+
+            <p class="hidden-field">
+            <label>
+                Don't fill this out if you're human:
+                <input name="bot-field">
+            </label>
+            </p>
 
                 <div class="form-grid">
 
