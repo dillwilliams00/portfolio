@@ -2,91 +2,39 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-
-    <!-- Makes the page responsive on mobile devices -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Thank You | Dillon Williams</title>
-
-    <!-- Root-level page, so this points directly to static/style.css -->
+    <meta name="description" content="Thank you page for Dillon Builds quote requests.">
+    <title>Thank You | Dillon Builds</title>
     <link href="static/style.css" rel="stylesheet">
 </head>
-
 <body>
-
-    <!-- Main navigation -->
-    <nav class="nav">
-        <h1 class="nav-title">
-            <a href="index.html">Dillon Builds</a>
-        </h1>
-        <button class="mobile-menu-toggle" aria-label="Open navigation menu" aria-expanded="false">
-        ☰
-        </button>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-
-            <li><a href="projects.html">Projects</a></li>
-
-            <li class="nav-dropdown">
-                <a href="about.html">About</a>
-
-                <ul class="dropdown-menu">
-                    <li><a href="about.html">About Me</a></li>
-                    <li><a href="about.html#learning-journey">Learning Journey</a></li>
-                    <li>
-                        <a href="assets/resume.pdf" target="_blank" rel="noopener noreferrer">
-                            Resume PDF
-                        </a>
-                    </li>
-                </ul>
-            </li>
-
-            <li>
-                <a href="pricing.html"
-                >
-                    Pricing
-                </a>
-            </li>
-            <li>
-            <a class="nav-contact"
-                href="mailto:hello@dillonbuilds.dev"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                Contact Me
-            </a>
-        </li>
-        </ul>
-    </nav>
-
-    <main class="thank-you-page">
-
-        <section class="thank-you-card">
-            <p class="eyebrow">Quote Request Sent</p>
-
-            <h1>Thank you!</h1>
-
-            <p>
-                Your quote request has been submitted successfully. I’ll review the details
-                and follow up as soon as I can.
-            </p>
-
-            <div class="thank-you-actions">
-                <a href="index.html" class="project-card-link">
-                    Back to Home
-                </a>
-
-                <a href="pricing.html" class="secondary-link">
-                    Return to Services
-                </a>
-            </div>
-        </section>
-
-    </main>
-
-    <footer>
-        <p>&copy; 2026 Dillon Williams. All rights reserved. Crafted with ❤️</p>
-    </footer>
+<nav class="nav">
+    <h1 class="nav-title"><a href="index.html">Dillon Builds</a></h1>
+    <button class="mobile-menu-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="site-navigation">☰</button>
+    <ul class="nav-links" id="site-navigation">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li class="nav-dropdown"><a href="about.html">About</a><ul class="dropdown-menu"><li><a href="about.html">About Me</a></li><li><a href="about.html#learning-journey">Learning Journey</a></li><li><a href="assets/resume.pdf" target="_blank" rel="noopener noreferrer">Resume PDF</a></li></ul></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a class="nav-contact" href="mailto:hello@dillonbuilds.dev">Contact Me</a></li>
+    </ul>
+</nav>
+<main class="thank-you-page">
+    <section class="thank-you-card hero-panel">
+        <p class="eyebrow">Quote Request Sent</p>
+        <h1>Thank you!</h1>
+        <p>Your quote request has been submitted. I’ll review the project details and follow up through email.</p>
+        <div class="home-hero-actions">
+            <a href="index.html" class="button-primary">Back to Home</a>
+            <a href="projects.html" class="button-secondary">View Projects</a>
+        </div>
+    </section>
+</main>
+<footer class="site-footer">
+    <div><h2>Dillon Builds</h2><p>UX-informed websites, product builds, and documented full-stack growth.</p></div>
+    <ul class="footer-links"><li><a href="projects.html">Projects</a></li><li><a href="pricing.html">Services</a></li><li><a href="assets/resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a></li><li><a href="https://commithistory.blogspot.com" target="_blank" rel="noopener noreferrer">Commit History</a></li><li><a href="mailto:hello@dillonbuilds.dev">Email</a></li></ul>
+    <p class="footer-credit">&copy; 2026 Dillon Williams. All rights reserved. Crafted with ❤️</p>
+</footer>
 <script src="static/script.js"></script>
 </body>
 </html>
