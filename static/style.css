@@ -295,33 +295,6 @@ section { margin-bottom: 5rem; }
     border-bottom: 1px solid var(--color-border);
 }
 
-.screenshot-placeholder {
-    min-height: 360px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 0.35rem;
-    text-align: center;
-    background:
-        linear-gradient(135deg, rgba(36, 52, 71, 0.08), rgba(47, 128, 237, 0.14)),
-        #f8fbff;
-    border-bottom: 1px solid var(--color-border);
-}
-
-.screenshot-placeholder span {
-    color: var(--color-accent);
-    font-size: 0.78rem;
-    font-weight: 900;
-    letter-spacing: 0.09em;
-    text-transform: uppercase;
-}
-
-.screenshot-placeholder strong {
-    color: var(--color-primary);
-    font-size: 1.65rem;
-}
-
 .compact-gallery .personal-os-screen-card img {
     object-fit: contain;
 }
@@ -484,10 +457,8 @@ section { margin-bottom: 5rem; }
         align-items: stretch;
     }
 
-    .personal-os-screen-card img,
-    .screenshot-placeholder {
+    .personal-os-screen-card img {
         height: auto;
-        min-height: 260px;
         max-height: 520px;
         object-fit: contain;
     }
