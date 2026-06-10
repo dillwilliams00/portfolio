@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A build preview for Personal OS, an active local productivity and life-management system by Dillon Williams.">
-    <title>Personal OS Build Preview | Dillon Builds</title>
+    <meta name="description" content="A case study for Personal OS, a live portfolio showcase project by Dillon Williams.">
+    <title>Personal OS Case Study | Dillon Builds</title>
     <link href="../static/style.css" rel="stylesheet">
 </head>
 <body>
@@ -31,19 +31,29 @@
     <a href="../projects.html" class="back-link">← Back to Projects</a>
 
     <section class="case-study-hero hero-panel">
-        <p class="eyebrow">Active Local Build</p>
+        <p class="eyebrow">Featured Case Study</p>
         <h1>Personal OS</h1>
         <p class="case-study-intro">
-            Personal OS is a local-first productivity and life-management system I am actively building to organize tasks,
-            projects, calendar visibility, journaling, meals, recipes, grocery planning, and system signals into one clear dashboard.
+            A custom productivity system for connecting tasks, projects, calendar events, meals,
+            journaling, daily planning, and system signals.
         </p>
-        <div class="case-study-tags">
-            <span>Coming Soon</span>
-            <span>Local Build</span>
-            <span>Active Development</span>
+        <p>
+            Personal OS was designed and built as a personal operating system for managing daily life
+            with more context and clarity. The project brings scattered personal systems into one
+            structured dashboard so important work, routines, and signals are easier to understand.
+        </p>
+        <div class="case-study-tags status-badge-row" aria-label="Project status">
+            <span>Live Project</span>
+            <span>Featured Build</span>
             <span>Productivity System</span>
-            <span>UX</span>
+            <span>UX Design</span>
             <span>React</span>
+            <span>TypeScript</span>
+        </div>
+        <div class="case-study-actions">
+            <a href="https://personal-os-ashy-alpha.vercel.app/" target="_blank" rel="noopener noreferrer" class="button-primary">Try the Live Build</a>
+            <a href="#project-gallery" class="button-secondary">View Project Gallery</a>
+            <a href="../projects.html" class="button-secondary">Back to Projects</a>
         </div>
     </section>
 
@@ -51,28 +61,31 @@
         <article class="overview-card">
             <h2>Status</h2>
             <p>
-                Personal OS is currently local-only while I build, test, and refine the core experience before preparing it for a public release.
+                Live portfolio showcase with a public Vercel build available for visitors to explore
+                after reading the case study.
             </p>
         </article>
 
         <article class="overview-card">
             <h2>Purpose</h2>
             <p>
-                The goal is to turn scattered life admin into one connected system that helps surface what needs attention next.
+                Centralize the systems I use to manage work, projects, routines, meals, journaling,
+                and daily planning.
             </p>
         </article>
 
         <article class="overview-card">
-            <h2>Current Focus</h2>
+            <h2>Result</h2>
             <p>
-                I am focused on dashboard clarity, task/project flows, calendar visibility, structured journaling, and food planning tools.
+                A connected dashboard that treats personal data as relationships instead of isolated
+                lists, screens, and trackers.
             </p>
         </article>
     </section>
 
     <section class="case-study-image-section">
         <img
-            src="../assets/images/personal-os/dashboard.png"
+            src="../assets/images/Personal-OS/Dashboard.png"
             alt="Personal OS dashboard overview screen"
             class="case-study-image"
             loading="lazy"
@@ -80,127 +93,200 @@
     </section>
 
     <section class="case-study-section">
-        <p class="eyebrow">Overview</p>
-        <h2>What is Personal OS?</h2>
+        <p class="eyebrow">Project Overview</p>
+        <h2>A connected system for daily life.</h2>
         <p>
-            Personal OS is a self-management dashboard designed to bring the moving pieces of daily life into one organized space.
-            Instead of separating tasks, projects, journals, meals, routines, and planning into different tools, the system is being built
-            around connected context.
+            Personal OS is a full-stack personal productivity application designed to centralize the
+            systems I use to manage work, projects, routines, meals, journaling, and daily planning.
+            Instead of treating each feature as separate, the app is built around relationships between
+            information.
         </p>
         <p>
-            The current local version focuses on helping a user understand what is scheduled, what is overdue, what has gone stale,
-            what needs attention, and what area of life or work should become the next focus.
-        </p>
-    </section>
-
-    <section class="case-study-section highlight-section accent-panel">
-        <p class="eyebrow">Coming Soon</p>
-        <h2>Why This Page Is a Build Preview</h2>
-        <p>
-            Personal OS is not a public product yet. This page documents the active local build, the product direction,
-            the systems already taking shape, and the decisions I am making as the project evolves.
-        </p>
-        <p>
-            The goal is to show progress honestly while giving visitors a clear view into how I think through product architecture,
-            user experience, and feature development over time.
+            Tasks can connect to projects, calendar events surface in daily planning, journal entries
+            can provide context, and system signals help identify what needs attention. The goal is not
+            just to track information, but to help the user understand how different areas of life connect.
         </p>
     </section>
 
     <section class="case-study-section">
         <p class="eyebrow">Problem</p>
-        <h2>The Problem It Is Being Built Around</h2>
+        <h2>Productivity tools often split life into pieces.</h2>
         <p>
-            Productivity tools often focus on isolated pieces: a task list, a calendar, a notes app, or a habit tracker.
-            The challenge is that real life does not always separate itself that neatly.
+            Most productivity tools separate tasks, calendars, notes, food planning, and reflection into
+            different apps. That separation creates friction because the user still has to mentally connect
+            what is due, what is scheduled, what needs attention, and what context matters.
         </p>
         <p>
-            Personal OS is being built around the idea that tasks, projects, meals, routines, journals, and plans are connected.
-            A useful system should help make those connections visible instead of forcing the user to mentally track everything alone.
+            Personal OS was built to explore what happens when those systems are connected in one place.
+            The challenge was creating an interface that could handle complex personal data without
+            becoming overwhelming.
+        </p>
+    </section>
+
+    <section class="case-study-section highlight-section accent-panel">
+        <p class="eyebrow">Solution</p>
+        <h2>A modular dashboard with contextual signals.</h2>
+        <p>
+            The solution was to build a modular dashboard and connected set of pages that surface the most
+            important information at the right time. Personal OS includes focus cards, task management,
+            project tracking, calendar views, structured journaling, food planning, system signals, and
+            daily review flows.
+        </p>
+        <p>
+            Rather than forcing every decision through one large screen, the product groups related
+            information and uses states, filters, and signals to guide attention.
         </p>
     </section>
 
     <section class="case-study-section">
-        <p class="eyebrow">Current Local Features</p>
-        <h2>What the Build Currently Includes</h2>
-        <div class="feature-list">
+        <p class="eyebrow">Key Features</p>
+        <h2>What Personal OS includes.</h2>
+        <div class="feature-list feature-grid">
             <article class="feature-row">
                 <span class="feature-number">01</span>
                 <div>
-                    <h3>Dashboard</h3>
-                    <p>A central command center for daily focus, upcoming events, stale projects, overdue tasks, and quick access to key areas.</p>
+                    <h3>Dynamic Dashboard</h3>
+                    <p>A focus card stack gives the user a quick read on what matters today.</p>
                 </div>
             </article>
 
             <article class="feature-row">
                 <span class="feature-number">02</span>
                 <div>
-                    <h3>Tasks</h3>
-                    <p>Task views support filtering by status, priority, schedule, overdue state, and active focus so the user can decide what matters next.</p>
+                    <h3>Task Management</h3>
+                    <p>Filters, states, priorities, estimated time, and calendar links support practical planning.</p>
                 </div>
             </article>
 
             <article class="feature-row">
                 <span class="feature-number">03</span>
                 <div>
-                    <h3>Projects</h3>
-                    <p>Projects are treated as living systems with progress, active tasks, last-updated signals, and health states.</p>
+                    <h3>Project Tracking</h3>
+                    <p>Health states, progress, active tasks, and stale project signals keep longer work visible.</p>
                 </div>
             </article>
 
             <article class="feature-row">
                 <span class="feature-number">04</span>
                 <div>
-                    <h3>Calendar</h3>
-                    <p>Calendar visibility helps connect tasks and scheduled items so planning is not disconnected from time.</p>
+                    <h3>Calendar Views</h3>
+                    <p>Day, week, and month views connect scheduled tasks with calendar events.</p>
                 </div>
             </article>
 
             <article class="feature-row">
                 <span class="feature-number">05</span>
                 <div>
-                    <h3>Journal</h3>
-                    <p>Structured journaling is being designed to support reflection, custom entry fields, templates, and connections to other parts of the system.</p>
+                    <h3>Structured Journaling</h3>
+                    <p>Templates and custom fields make reflection easier to organize and revisit.</p>
                 </div>
             </article>
 
             <article class="feature-row">
                 <span class="feature-number">06</span>
                 <div>
-                    <h3>Meals, Recipes, and Grocery Planning</h3>
-                    <p>Food planning tools bring recipes, planned meals, and grocery lists into the same system as the rest of life admin.</p>
+                    <h3>Food and Meal Planning</h3>
+                    <p>Meal planning tools bring food decisions into the same daily operating system.</p>
+                </div>
+            </article>
+
+            <article class="feature-row">
+                <span class="feature-number">07</span>
+                <div>
+                    <h3>Daily Planning and Review</h3>
+                    <p>Planning and end-of-day review flows help the system become a daily ritual.</p>
+                </div>
+            </article>
+
+            <article class="feature-row">
+                <span class="feature-number">08</span>
+                <div>
+                    <h3>System Signals</h3>
+                    <p>Overdue tasks, upcoming events, and stale projects are surfaced before they disappear.</p>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section class="case-study-section" id="project-gallery">
+        <div class="section-header">
+            <p class="eyebrow">Visual Showcase</p>
+            <h2>Personal OS screens and flows.</h2>
+            <p>
+                These screens show the current portfolio-ready build. Placeholder cards mark the next
+                screenshot slots so the gallery can expand cleanly as more exports are added.
+            </p>
+        </div>
+
+        <div class="personal-os-gallery">
+            <article class="personal-os-screen-card">
+                <img src="../assets/images/Personal-OS/Dashboard.png" alt="Personal OS dashboard screen" loading="lazy">
+                <div class="screen-card-content">
+                    <h3>Dashboard Overview</h3>
+                    <p>Dashboard overview with focus cards and system signals.</p>
+                </div>
+            </article>
+
+            <article class="personal-os-screen-card">
+                <div class="screenshot-placeholder" aria-label="Placeholder for task management screenshot">
+                    <span>Screenshot Slot</span>
+                    <strong>Tasks</strong>
+                </div>
+                <div class="screen-card-content">
+                    <h3>Task Management</h3>
+                    <p>Task management with filters and dynamic states.</p>
+                </div>
+            </article>
+
+            <article class="personal-os-screen-card">
+                <div class="screenshot-placeholder" aria-label="Placeholder for calendar screenshot">
+                    <span>Screenshot Slot</span>
+                    <strong>Calendar</strong>
+                </div>
+                <div class="screen-card-content">
+                    <h3>Calendar Views</h3>
+                    <p>Calendar views connected to scheduled tasks and events.</p>
+                </div>
+            </article>
+
+            <article class="personal-os-screen-card">
+                <div class="screenshot-placeholder" aria-label="Placeholder for journal screenshot">
+                    <span>Screenshot Slot</span>
+                    <strong>Journal</strong>
+                </div>
+                <div class="screen-card-content">
+                    <h3>Structured Journaling</h3>
+                    <p>Structured journaling with templates and custom fields.</p>
+                </div>
+            </article>
+
+            <article class="personal-os-screen-card">
+                <div class="screenshot-placeholder" aria-label="Placeholder for project tracking screenshot">
+                    <span>Screenshot Slot</span>
+                    <strong>Projects</strong>
+                </div>
+                <div class="screen-card-content">
+                    <h3>Project Tracking</h3>
+                    <p>Project tracking with health indicators and progress.</p>
+                </div>
+            </article>
+
+            <article class="personal-os-screen-card">
+                <img src="../assets/images/Personal-OS/Planned-Meals.png" alt="Personal OS planned meals screen" loading="lazy">
+                <div class="screen-card-content">
+                    <h3>Food Planning</h3>
+                    <p>Food planning tools connected to daily routines.</p>
                 </div>
             </article>
         </div>
     </section>
 
     <section class="case-study-section">
-        <div class="section-header">
-            <p class="eyebrow">Build Progress Screens</p>
-            <h2>Personal OS in Local Development</h2>
-            <p>
-                These screens show the current direction of the local build. They are not final launch screens, but they document the product as it grows.
-            </p>
-        </div>
-
-        <div class="personal-os-gallery">
+        <p class="eyebrow">Additional Screens</p>
+        <h2>Life-management tools inside the system.</h2>
+        <div class="personal-os-gallery compact-gallery">
             <article class="personal-os-screen-card">
-                <img src="../assets/images/personal-os/dashboard.png" alt="Personal OS dashboard screen" loading="lazy">
-                <div class="screen-card-content">
-                    <h3>Dashboard Overview</h3>
-                    <p>The dashboard acts as the main command center for focus, signals, tasks, and scheduled visibility.</p>
-                </div>
-            </article>
-
-            <article class="personal-os-screen-card">
-                <img src="../assets/images/personal-os/experiences.png" alt="Personal OS experiences screen" loading="lazy">
-                <div class="screen-card-content">
-                    <h3>Experiences</h3>
-                    <p>Experience tracking expands the system beyond task management into a broader personal life archive.</p>
-                </div>
-            </article>
-
-            <article class="personal-os-screen-card">
-                <img src="../assets/images/personal-os/grocery-list.png" alt="Personal OS grocery list screen" loading="lazy">
+                <img src="../assets/images/Personal-OS/Grocery-List.png" alt="Personal OS grocery list screen" loading="lazy">
                 <div class="screen-card-content">
                     <h3>Grocery List</h3>
                     <p>Grocery planning turns meal decisions into practical next actions.</p>
@@ -208,135 +294,146 @@
             </article>
 
             <article class="personal-os-screen-card">
-                <img src="../assets/images/personal-os/planned-meals.png" alt="Personal OS planned meals screen" loading="lazy">
+                <img src="../assets/images/Personal-OS/Experiences.png" alt="Personal OS experiences screen" loading="lazy">
                 <div class="screen-card-content">
-                    <h3>Planned Meals</h3>
-                    <p>Planned meals connect food choices to weekly structure and daily planning.</p>
+                    <h3>Experiences</h3>
+                    <p>Experience tracking shows how the system can grow beyond task management.</p>
                 </div>
             </article>
         </div>
     </section>
 
     <section class="case-study-section">
-        <p class="eyebrow">System Decisions</p>
-        <h2>Important Product Decisions</h2>
-        <div class="decision-grid">
-            <article class="decision-card">
-                <h3>System Signals</h3>
-                <p>Instead of relying on the user to remember everything, Personal OS surfaces overdue tasks, upcoming events, and stale projects.</p>
+        <p class="eyebrow">Design and UX Thinking</p>
+        <h2>Making complex information feel approachable.</h2>
+        <p>
+            This project focused heavily on information architecture, interaction design, and reducing
+            friction. The goal was to make a complex system feel approachable by grouping related
+            information, using clear states, and surfacing contextual signals instead of forcing the
+            user to manually search for what matters.
+        </p>
+        <p>
+            The interface is designed around progressive focus: the dashboard gives a high-level read,
+            detail pages support deeper work, and system signals help translate scattered information
+            into useful next steps.
+        </p>
+    </section>
+
+    <section class="case-study-section">
+        <p class="eyebrow">Technical Highlights</p>
+        <h2>How the build is structured.</h2>
+        <div class="tech-stack-grid">
+            <article class="tech-card">
+                <h3>React / TypeScript</h3>
+                <p>A typed front end supports clearer feature boundaries and safer iteration.</p>
             </article>
 
-            <article class="decision-card">
-                <h3>Project Health</h3>
-                <p>Projects can become healthy, at risk, or stale based on activity so neglected work becomes visible before it disappears.</p>
+            <article class="tech-card">
+                <h3>Component Architecture</h3>
+                <p>Reusable cards, lists, dashboards, and detail views keep the interface modular.</p>
             </article>
 
-            <article class="decision-card">
-                <h3>Daily Focus</h3>
-                <p>The system is designed to reduce overwhelm by helping determine what deserves attention today.</p>
+            <article class="tech-card">
+                <h3>Route-Driven Views</h3>
+                <p>Pages and detail screens are organized around the product's core workflows.</p>
             </article>
 
-            <article class="decision-card">
-                <h3>Connected Life Admin</h3>
-                <p>Food, groceries, tasks, planning, projects, and reflection all belong in one connected operating system.</p>
+            <article class="tech-card">
+                <h3>State-Based UI</h3>
+                <p>Tasks, projects, signals, and filters change the interface based on user context.</p>
+            </article>
+
+            <article class="tech-card">
+                <h3>Computed Signals</h3>
+                <p>Dynamic filters help surface overdue tasks, upcoming events, and stale projects.</p>
+            </article>
+
+            <article class="tech-card">
+                <h3>Calendar-Aware Rendering</h3>
+                <p>Tasks and events are displayed with time-aware planning context.</p>
+            </article>
+
+            <article class="tech-card">
+                <h3>Modular Expansion</h3>
+                <p>The system is structured so journaling, food, projects, and planning can grow over time.</p>
+            </article>
+
+            <article class="tech-card">
+                <h3>Local-First Maturity</h3>
+                <p>The product began as a local-first build and now has a public Vercel version for hands-on review.</p>
             </article>
         </div>
     </section>
 
-    <section class="case-study-section">
-        <p class="eyebrow">Build Timeline</p>
-        <h2>How the Project Is Taking Shape</h2>
-        <div class="case-timeline">
-            <article class="case-timeline-item">
-                <span>Phase 1</span>
-                <h3>Core Dashboard Foundation</h3>
-                <p>Built the main dashboard structure, focus areas, upcoming events, task visibility, and system signal concepts.</p>
-            </article>
-
-            <article class="case-timeline-item">
-                <span>Phase 2</span>
-                <h3>Tasks, Projects, and Calendar Logic</h3>
-                <p>Expanded task filters, project health states, calendar views, and dashboard connections between scheduled items and active work.</p>
-            </article>
-
-            <article class="case-timeline-item">
-                <span>Phase 3</span>
-                <h3>Structured Journaling</h3>
-                <p>Added stronger journal architecture with custom fields, templates, and a path toward more flexible entries.</p>
-            </article>
-
-            <article class="case-timeline-item">
-                <span>Current Phase</span>
-                <h3>Life Admin Expansion</h3>
-                <p>Developing food, recipe, grocery, and planning flows so the system supports practical daily life alongside productivity.</p>
-            </article>
+    <section class="case-study-section live-build-callout accent-panel">
+        <div>
+            <p class="eyebrow">Try It Live</p>
+            <h2>Explore the build for yourself.</h2>
+            <p>
+                The live Personal OS build is available as a public showcase. Visitors can open the app,
+                move through the dashboard, and get a hands-on feel for the connected productivity system.
+            </p>
         </div>
+        <a href="https://personal-os-ashy-alpha.vercel.app/" target="_blank" rel="noopener noreferrer" class="button-primary">Open Personal OS</a>
     </section>
 
     <section class="case-study-section">
-        <p class="eyebrow">What I Am Learning</p>
-        <h2>Lessons From the Current Build</h2>
+        <p class="eyebrow">What I Learned</p>
+        <h2>Designing relationships, not just features.</h2>
         <div class="lesson-grid">
             <article class="lesson-card">
-                <h3>Dashboard Design</h3>
-                <p>I am learning how to organize many types of information without making the interface feel overwhelming.</p>
+                <h3>Systems Thinking</h3>
+                <p>I learned how to think beyond individual features and design around data relationships.</p>
             </article>
 
             <article class="lesson-card">
-                <h3>State and Relationships</h3>
-                <p>The project is teaching me how tasks, projects, journals, calendar data, and life admin features can affect each other.</p>
+                <h3>React Architecture</h3>
+                <p>I practiced structuring larger React applications with routing, reusable components, and state-driven UI.</p>
             </article>
 
             <article class="lesson-card">
-                <h3>Product Architecture</h3>
-                <p>Building Personal OS is helping me think beyond individual pages and toward a system that can grow over time.</p>
+                <h3>UX Patterns</h3>
+                <p>I improved dashboard design, debugging habits, and patterns for making complex systems easier to understand.</p>
             </article>
         </div>
     </section>
 
     <section class="case-study-section">
-        <p class="eyebrow">Roadmap</p>
-        <h2>What Comes Next</h2>
+        <p class="eyebrow">Future Improvements</p>
+        <h2>Where the project can grow next.</h2>
         <div class="priority-list">
             <article class="priority-card high-priority">
-                <p class="project-status">Short-Term</p>
-                <h3>Polish Core Flows</h3>
-                <p>Improve the dashboard, task details, project details, calendar visibility, and daily focus experience.</p>
+                <p class="project-status">Next Layer</p>
+                <h3>Cloud Sync and Authentication</h3>
+                <p>Add an optional database layer, account system, and sync support for multi-device use.</p>
             </article>
 
             <article class="priority-card medium-priority">
-                <p class="project-status">Next</p>
-                <h3>Strengthen Life Admin Tools</h3>
-                <p>Refine meals, recipes, grocery planning, experiences, and how these areas connect back to the dashboard.</p>
+                <p class="project-status">Experience</p>
+                <h3>Mobile Optimization and Onboarding</h3>
+                <p>Improve small-screen workflows and create a stronger first-run experience.</p>
             </article>
 
             <article class="priority-card low-priority">
-                <p class="project-status">Later</p>
-                <h3>Prepare for Public Release</h3>
-                <p>Clean up the codebase, improve responsive behavior, add stronger persistence, and prepare the project for deployment.</p>
+                <p class="project-status">Expansion</p>
+                <h3>Analytics, Automation, and Demo</h3>
+                <p>Add deeper insights, expanded automation, and continue polishing the public showcase experience.</p>
             </article>
         </div>
-    </section>
-
-    <section class="case-study-section commit-history-callout accent-panel">
-        <div>
-            <p class="eyebrow">Commit History</p>
-            <h2>Follow the Build</h2>
-            <p>
-                I am documenting Personal OS as I build it, including feature decisions, bugs, refactors,
-                screenshots, and lessons learned through the process.
-            </p>
-        </div>
-        <a href="https://commithistory.blogspot.com" target="_blank" rel="noopener noreferrer" class="button-primary">Read Devlogs</a>
     </section>
 
     <section class="case-study-closing">
         <h2>Why This Project Matters</h2>
         <p>
-            Personal OS represents the kind of system I want to keep building: practical, human-centered tools that connect information,
-            reduce mental clutter, and turn everyday life into something easier to understand and manage.
+            Personal OS is one of my strongest examples of product thinking, UX design, and full-stack
+            development. It shows how I approach complex problems, design connected systems, and build
+            tools that are practical, personal, and scalable.
         </p>
-        <a href="../projects.html" class="button-primary">Back to Projects</a>
+        <div class="case-study-actions closing-actions">
+            <a href="https://personal-os-ashy-alpha.vercel.app/" target="_blank" rel="noopener noreferrer" class="button-primary">Try the Live Build</a>
+            <a href="../projects.html" class="button-secondary">Back to Projects</a>
+            <a href="../projects.html#projectSearch" class="button-secondary">View More Work</a>
+        </div>
     </section>
 </main>
 
