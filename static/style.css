@@ -259,6 +259,10 @@ section { margin-bottom: 5rem; }
     margin-top: 1.75rem;
 }
 
+.closing-actions {
+    justify-content: center;
+}
+
 .feature-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
