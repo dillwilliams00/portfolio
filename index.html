@@ -60,7 +60,7 @@
     </section>
 
     <section class="credibility-strip" aria-label="Portfolio highlights">
-        <div><strong>2</strong><span>Live products</span></div>
+        <div><strong>1</strong><span>Live product</span></div>
         <div><strong>5+</strong><span>Case study areas</span></div>
         <div><strong>UX</strong><span>Research-informed</span></div>
         <div><strong>Full-stack</strong><span>Learning in public</span></div>
@@ -97,15 +97,46 @@
         </article>
     </section>
 
-    <section class="commit-history-preview">
+    <section class="commit-history-preview" aria-labelledby="commit-history-title">
         <div class="section-header">
             <p class="eyebrow">Commit History</p>
-            <h2>What I’m learning as I build.</h2>
-            <p>Commit History is my live blog where I document progress, decisions, mistakes, fixes, and lessons from my coding journey.</p>
+            <h2 id="commit-history-title">What I’m learning as I build.</h2>
+            <p>Commit History is my live blog where I document progress, product decisions, mistakes, fixes, and lessons from my coding journey.</p>
         </div>
-        <div class="commit-card-grid">
-            <article class="commit-card"><p class="project-status">Live Blog</p><h3>Build Notes, Devlogs, and Reflections</h3><p>I use Commit History to turn my development process into readable posts: what changed, why it mattered, what I learned, and what I would do differently next time.</p><a href="https://commithistory.blogspot.com" target="_blank" rel="noopener noreferrer" class="button-primary">Read Commit History</a></article>
-            <article class="commit-card commit-card-muted"><p class="project-status">Coming Later</p><h3>Dynamic Blog Preview</h3><p>As I learn JavaScript and backend development, this section can evolve from a static link into a live preview of recent blog posts.</p></article>
+
+        <div class="blog-preview-panel">
+            <div class="blog-preview-intro">
+                <div>
+                    <p class="project-status">Live Blog · Auto-Updating Preview</p>
+                    <h3>Recent posts from Commit History</h3>
+                    <p>The latest posts are pulled from the blog feed when the page loads, giving visitors a quick view of what I am actively building and learning.</p>
+                </div>
+                <a href="https://commithistory.blogspot.com" target="_blank" rel="noopener noreferrer" class="button-secondary">Open Commit History</a>
+            </div>
+
+            <div
+                id="commitHistoryFeed"
+                class="blog-preview-grid"
+                data-blog-feed="https://commithistory.blogspot.com/feeds/posts/default?alt=json-in-script&max-results=3"
+                aria-live="polite"
+            >
+                <article class="blog-post-card blog-card-skeleton" aria-label="Loading recent blog post">
+                    <span></span><h3></h3><p></p><p></p>
+                </article>
+                <article class="blog-post-card blog-card-skeleton" aria-label="Loading recent blog post">
+                    <span></span><h3></h3><p></p><p></p>
+                </article>
+                <article class="blog-post-card blog-card-skeleton" aria-label="Loading recent blog post">
+                    <span></span><h3></h3><p></p><p></p>
+                </article>
+            </div>
+
+            <noscript>
+                <div class="blog-preview-fallback">
+                    <p>JavaScript is needed to load the recent post preview. You can still read the blog directly.</p>
+                    <a href="https://commithistory.blogspot.com" target="_blank" rel="noopener noreferrer" class="button-primary">Read Commit History</a>
+                </div>
+            </noscript>
         </div>
     </section>
 
@@ -132,6 +163,7 @@
     </ul>
     <p class="footer-credit">&copy; 2026 Dillon Williams. All rights reserved. Crafted with ❤️</p>
 </footer>
+<script src="static/dynamic-blog.js"></script>
 <script src="static/script.js"></script>
 </body>
 </html>
