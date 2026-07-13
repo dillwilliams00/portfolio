@@ -429,6 +429,22 @@ function buildFilledPacketHtml(answers = {}) {
             <div class="answer-line tall">${selectedOrBlank(answers["Existing Content"])}</div>
             <h3 class="blue-heading">Anything else I should know?</h3>
             <div class="answer-line tall">${selectedOrBlank(answers["Additional Details"])}</div>
+            <footer class="page-footer">Dillon Builds | dillonbuilds.dev | hello@dillonbuilds.dev</footer>
+        </section>
+
+        <section class="page">
+            <h2 class="section-title">Full Project Brief</h2>
+            <p class="muted">Additional planning details captured through the Project Assistant.</p>
+            <div class="two-col">
+                ${answerBlock("Project Type", answers["Project Type"])}
+                ${answerBlock("Target Audience", answers["Target Audience"])}
+                ${answerBlock("Desired Visitor Actions", answers["Desired Visitor Actions"])}
+                ${answerBlock("Requested Features", answers["Requested Features"])}
+                ${answerBlock("Integrations", answers.Integrations)}
+                ${answerBlock("Design Direction", answers["Design Direction"])}
+                ${answerBlock("Branding Status", answers["Branding Status"])}
+                ${answerBlock("Budget", answers.Budget)}
+            </div>
             <h2 class="section-title">Next Steps</h2>
             <p>I will review these details and recommend the most practical package, features, and project scope. You will receive a written quote outlining deliverables, timeline, included revisions, and payment terms.</p>
             <div class="note">Submitting this form begins the quote process and does not create a binding agreement. Final pricing, scope, payment terms, and timeline will be confirmed in writing before work begins.</div>

@@ -153,10 +153,8 @@
     const body = root.querySelector("[data-concierge-body]");
 
     launcher.addEventListener("click", () => {
-        const isOpen = panel.hidden;
-        panel.hidden = !isOpen;
-        launcher.setAttribute("aria-expanded", String(isOpen));
-        launcher.querySelector("span").textContent = isOpen ? "×" : "💬";
+        const shouldOpen = panel.hidden;
+        setPanelOpen(shouldOpen);
         render();
     });
 
@@ -173,9 +171,13 @@
     });
 
     function closePanel() {
-        panel.hidden = true;
-        launcher.setAttribute("aria-expanded", "false");
-        launcher.querySelector("span").textContent = "💬";
+        setPanelOpen(false);
+    }
+
+    function setPanelOpen(isOpen) {
+        panel.hidden = !isOpen;
+        root.classList.toggle("is-open", isOpen);
+        launcher.setAttribute("aria-expanded", String(isOpen));
     }
 
     function currentStep() {
@@ -199,6 +201,7 @@
 
     function renderChat() {
         if (state.viewState === "review") return renderReview();
+        if (state.viewState === "edit-answer") return renderEditAnswer();
         if (state.viewState === "uploads") return renderUploads();
         if (state.viewState === "done") return renderDone();
         if (state.viewState === "recommendation") return renderRecommendation();
@@ -245,7 +248,7 @@
         `;
 
         const form = body.querySelector("form");
-        renderStepInput(form, step);
+        renderStepInput(form, step, state.answers[step.id]);
         form.insertAdjacentHTML("beforeend", `
             <div class="db-concierge-step-actions">
                 ${step.optional ? '<button type="button" data-skip>Skip</button>' : ""}
@@ -268,14 +271,15 @@
         });
     }
 
-    function renderStepInput(form, step) {
+    function renderStepInput(form, step, currentValue = "") {
         if (step.type === "single" || step.type === "multi") {
             const type = step.type === "multi" ? "checkbox" : "radio";
+            const selectedValues = arrayFrom(currentValue);
             form.insertAdjacentHTML("beforeend", `
                 <div class="db-concierge-options">
                     ${step.options.map((option) => `
                         <label>
-                            <input type="${type}" name="step_value" value="${escapeHtml(option)}">
+                            <input type="${type}" name="step_value" value="${escapeHtml(option)}" ${selectedValues.includes(option) ? "checked" : ""}>
                             <span>${escapeHtml(option)}</span>
                         </label>
                     `).join("")}
@@ -285,11 +289,11 @@
         }
 
         if (step.type === "textarea") {
-            form.insertAdjacentHTML("beforeend", `<textarea name="step_value" rows="4"></textarea>`);
+            form.insertAdjacentHTML("beforeend", `<textarea name="step_value" rows="4">${escapeHtml(currentValue || "")}</textarea>`);
             return;
         }
 
-        form.insertAdjacentHTML("beforeend", `<input name="step_value" type="${step.type === "email" ? "email" : "text"}">`);
+        form.insertAdjacentHTML("beforeend", `<input name="step_value" type="${step.type === "email" ? "email" : "text"}" value="${escapeHtml(currentValue || "")}">`);
     }
 
     function readStepValue(form, step) {
@@ -407,6 +411,32 @@
         body.querySelector("[data-packet]").addEventListener("click", downloadFilledPacket);
     }
 
+    function displayAnswer(value) {
+        if (Array.isArray(value)) return value.length ? value.join(", ") : "Not answered";
+        return value || "Not answered";
+    }
+
+    function renderReviewRows() {
+        const sections = [...new Set(steps.map((step) => step.section))];
+        return sections.map((section) => {
+            const sectionSteps = steps.filter((step) => step.section === section);
+            return `
+                <div class="db-concierge-review-section">
+                    <h4>${escapeHtml(section)}</h4>
+                    ${sectionSteps.map((step) => `
+                        <button type="button" class="db-concierge-review-row" data-edit-step="${step.id}">
+                            <span>
+                                <strong>${escapeHtml(step.label)}</strong>
+                                <small>${escapeHtml(displayAnswer(state.answers[step.id]))}</small>
+                            </span>
+                            <em>Edit</em>
+                        </button>
+                    `).join("")}
+                </div>
+            `;
+        }).join("");
+    }
+
     function renderUploads() {
         body.innerHTML = `
             <div class="db-concierge-message bot">
@@ -436,30 +466,94 @@
     }
 
     function renderReview() {
-        const inquiry = buildConciergeInquiry();
+        const recommendation = getRecommendation();
         body.innerHTML = `
             <div class="db-concierge-review">
                 <h3>Review your project</h3>
-                <p>Downloading the packet does not submit anything. Use Submit to send your project request to Dillon.</p>
-                <dl>
-                    <dt>Name</dt><dd>${escapeHtml(inquiry.contact_name || "Not provided")}</dd>
-                    <dt>Email</dt><dd>${escapeHtml(inquiry.contact_email || "Not provided")}</dd>
-                    <dt>Business</dt><dd>${escapeHtml(inquiry.business_name || "Not provided")}</dd>
-                    <dt>Package</dt><dd>${escapeHtml(inquiry.package_interest || "Not sure")}</dd>
-                    <dt>Timeline</dt><dd>${escapeHtml(inquiry.timeline || "Not provided")}</dd>
-                    <dt>Files</dt><dd>${state.files.length ? `${state.files.length} selected` : "None selected"}</dd>
-                </dl>
+                <p>Review every answer below. Choose any row to change it before downloading your packet or submitting your request.</p>
+                <div class="db-concierge-recommendation">
+                    <strong>Recommended package</strong>
+                    <span>${escapeHtml(recommendation.name)} · ${escapeHtml(recommendation.price)}</span>
+                </div>
+                ${renderReviewRows()}
+                <button type="button" class="db-concierge-review-row" data-edit-files>
+                    <span><strong>Project files</strong><small>${state.files.length ? `${state.files.length} selected` : "None selected"}</small></span>
+                    <em>Edit</em>
+                </button>
                 <p class="db-concierge-error" hidden></p>
             </div>
             <div class="db-concierge-actions">
                 <button type="button" data-packet>Download filled packet</button>
                 <button type="button" data-submit>Submit to Dillon</button>
-                <button type="button" data-edit>Edit answers</button>
+                <button type="button" data-edit>Continue questions</button>
             </div>
         `;
+        body.querySelectorAll("[data-edit-step]").forEach((button) => {
+            button.addEventListener("click", () => {
+                state.editingStepId = button.dataset.editStep;
+                state.viewState = "edit-answer";
+                render();
+            });
+        });
+        body.querySelector("[data-edit-files]").addEventListener("click", () => { state.viewState = "uploads"; render(); });
         body.querySelector("[data-packet]").addEventListener("click", downloadFilledPacket);
-        body.querySelector("[data-edit]").addEventListener("click", () => { state.viewState = "planning"; render(); });
+        body.querySelector("[data-edit]").addEventListener("click", () => {
+            const firstMissing = steps.findIndex((step) => !step.optional && !state.answers[step.id]);
+            state.stepIndex = firstMissing >= 0 ? firstMissing : 0;
+            state.viewState = "planning";
+            render();
+        });
         body.querySelector("[data-submit]").addEventListener("click", submitConcierge);
+    }
+
+    function renderEditAnswer() {
+        const step = steps.find((item) => item.id === state.editingStepId) || currentStep();
+        if (!step) {
+            state.viewState = "review";
+            render();
+            return;
+        }
+
+        body.innerHTML = `
+            <div class="db-concierge-message bot">
+                <p class="db-concierge-section">${escapeHtml(step.section)}</p>
+                <strong>${escapeHtml(step.label)}</strong>
+            </div>
+            <form class="db-concierge-step-form"></form>
+        `;
+
+        const form = body.querySelector("form");
+        renderStepInput(form, step, state.answers[step.id]);
+        form.insertAdjacentHTML("beforeend", `
+            <div class="db-concierge-step-actions">
+                ${step.optional ? '<button type="button" data-clear>Clear</button>' : ""}
+                <button type="button" data-cancel>Cancel</button>
+                <button type="submit">Save answer</button>
+            </div>
+        `);
+
+        form.addEventListener("submit", (event) => {
+            event.preventDefault();
+            const value = readStepValue(form, step);
+            if (!step.optional && (!value || Array.isArray(value) && !value.length)) return;
+            state.answers[step.id] = value;
+            state.editingStepId = "";
+            state.viewState = "review";
+            render();
+        });
+
+        form.querySelector("[data-clear]")?.addEventListener("click", () => {
+            delete state.answers[step.id];
+            state.editingStepId = "";
+            state.viewState = "review";
+            render();
+        });
+
+        form.querySelector("[data-cancel]").addEventListener("click", () => {
+            state.editingStepId = "";
+            state.viewState = "review";
+            render();
+        });
     }
 
     function renderDone() {
@@ -584,11 +678,19 @@
             "Package Interest": inquiry.package_interest,
             "Ideal Timeline": inquiry.timeline,
             "Current Website": inquiry.current_website,
+            "Project Type": inquiry.project_type,
             "Website Goals": inquiry.website_goals || inquiry.project_description,
+            "Target Audience": inquiry.target_audience,
+            "Desired Visitor Actions": inquiry.desired_actions,
             "Pages Needed": inquiry.requested_pages,
             "Add-ons": inquiry.requested_features ? inquiry.requested_features.split(", ").filter(Boolean) : [],
+            "Requested Features": inquiry.requested_features,
+            "Integrations": inquiry.integrations,
+            "Design Direction": inquiry.design_direction,
+            "Branding Status": inquiry.branding_status,
             "Existing Content": inquiry.content_readiness,
-            "Additional Details": [inquiry.design_direction, inquiry.branding_status, inquiry.additional_notes].filter(Boolean).join("\n"),
+            "Budget": inquiry.budget,
+            "Additional Details": inquiry.additional_notes,
         };
     }
 
