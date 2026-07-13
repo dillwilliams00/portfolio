@@ -240,6 +240,10 @@ section { margin-bottom: 5rem; }
     box-shadow: var(--shadow-strong);
 }
 
+.db-concierge-panel[hidden] {
+    display: none;
+}
+
 .db-concierge-header {
     display: flex;
     align-items: center;
@@ -357,12 +361,66 @@ section { margin-bottom: 5rem; }
 .db-concierge-step-form input[type="text"],
 .db-concierge-step-form input[type="email"],
 .db-concierge-step-form textarea,
+.db-concierge-question-form input,
 .db-concierge-file-input {
     width: 100%;
     padding: 0.8rem 0.9rem;
     border: 1px solid var(--color-border);
     border-radius: 12px;
     font: inherit;
+}
+
+.db-concierge-question-form {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 0.65rem;
+    margin-bottom: 1rem;
+}
+
+.db-concierge-question-form button {
+    padding: 0.75rem 0.95rem;
+    border: 0;
+    border-radius: 999px;
+    background: var(--color-accent);
+    color: #fff;
+    cursor: pointer;
+    font: inherit;
+    font-weight: 850;
+}
+
+.db-concierge-question-grid {
+    display: grid;
+    gap: 0.55rem;
+    margin-bottom: 1rem;
+}
+
+.db-concierge-question-grid button {
+    padding: 0.75rem;
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    background: #fff;
+    color: var(--color-primary);
+    cursor: pointer;
+    font: inherit;
+    font-weight: 800;
+    text-align: left;
+}
+
+.db-concierge-answer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.85rem;
+}
+
+.db-concierge-answer-links a {
+    display: inline-flex;
+    padding: 0.55rem 0.75rem;
+    border-radius: 999px;
+    background: var(--color-accent-soft);
+    color: var(--color-accent);
+    font-weight: 850;
+    text-decoration: none;
 }
 
 .db-concierge-options {

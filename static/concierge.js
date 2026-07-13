@@ -45,6 +45,55 @@
         { id: "additional_notes", label: "Anything else you'd like Dillon to know?", type: "textarea", section: "Logistics", optional: true },
     ];
 
+    const questionTopics = [
+        {
+            id: "services",
+            label: "What can Dillon build for me?",
+            keywords: ["service", "build", "website", "site", "offer", "help"],
+            answer: "Dillon Builds focuses on clear, practical websites for small businesses, personal brands, portfolios, and service providers. The work usually includes page structure, responsive design, organized content, contact or quote forms, launch support, and optional add-ons like copy cleanup, analytics, galleries, blogs, and ongoing maintenance.",
+            links: [{ label: "View services and pricing", href: "/pricing.html" }],
+        },
+        {
+            id: "pricing",
+            label: "How much does a website cost?",
+            keywords: ["price", "pricing", "cost", "package", "budget", "rate"],
+            answer: "Starter Websites are $250-$300, Business Websites start at $400, and Expanded Websites start at $600. Add-ons are priced separately when the scope needs more pages, copywriting, custom forms, galleries, analytics, launch support, or maintenance.",
+            links: [{ label: "Open pricing page", href: "/pricing.html" }],
+        },
+        {
+            id: "process",
+            label: "How does the process work?",
+            keywords: ["process", "timeline", "start", "work", "steps", "how"],
+            answer: "The process is discovery, structure, build, then review and launch. First you clarify the business, goals, audience, pages, content, and timeline. Then Dillon maps the site, builds the pages, reviews changes with you, and prepares the final handoff or launch.",
+            links: [{ label: "Start planning here", action: "planning" }],
+        },
+        {
+            id: "packet",
+            label: "What is the Welcome Packet for?",
+            keywords: ["packet", "welcome", "pdf", "paper", "quote form", "download"],
+            answer: "The Welcome Packet is for people who prefer to think on paper before requesting a quote. You can download a blank copy, or use this assistant to create a filled packet from your answers. Downloading the packet does not submit anything unless you choose to send the project request.",
+            links: [{ label: "Download blank packet", action: "blank-packet" }],
+        },
+        {
+            id: "projects",
+            label: "What projects show Dillon's work?",
+            keywords: ["project", "portfolio", "work", "case study", "personal os", "prompt-it", "prompt it"],
+            answer: "The portfolio highlights product thinking, UX design, and full-stack development. Personal OS shows a structured productivity dashboard for routines, projects, meals, journaling, and planning. Prompt-it shows ownership of a larger social prompt app with product, migration, and architecture work.",
+            links: [
+                { label: "View all projects", href: "/projects.html" },
+                { label: "Personal OS case study", href: "/projects/personal-os.html" },
+                { label: "Prompt-it case study", href: "/projects/prompt-it.html" },
+            ],
+        },
+        {
+            id: "content",
+            label: "What if I do not have everything ready?",
+            keywords: ["content", "copy", "photos", "logo", "brand", "ready", "writing"],
+            answer: "That is okay. The assistant and Welcome Packet help you sort out what you have, what is missing, and what support you may need. Dillon can also quote copy cleanup, full website copywriting, simple logo cleanup, brand direction, galleries, and launch support.",
+            links: [{ label: "Plan my project", action: "planning" }],
+        },
+    ];
+
     const state = loadState();
 
     function loadState() {
@@ -66,7 +115,12 @@
     state.stepIndex ??= 0;
     state.answers ??= {};
     state.files ??= [];
-    state.view ??= "welcome";
+    state.view ??= "chat";
+    state.viewState ??= "welcome";
+
+    if (!["chat", "project"].includes(state.view)) {
+        state.view = "chat";
+    }
 
     const root = document.createElement("div");
     root.className = "db-concierge";
@@ -124,11 +178,6 @@
         launcher.querySelector("span").textContent = "💬";
     }
 
-    function setView(view) {
-        state.view = view;
-        render();
-    }
-
     function currentStep() {
         return steps[state.stepIndex] || null;
     }
@@ -153,8 +202,9 @@
         if (state.viewState === "uploads") return renderUploads();
         if (state.viewState === "done") return renderDone();
         if (state.viewState === "recommendation") return renderRecommendation();
+        if (state.viewState === "questions") return renderQuestions();
 
-        if (state.view === "welcome" || state.stepIndex === 0 && !Object.keys(state.answers).length) {
+        if (state.viewState !== "planning" && state.stepIndex === 0 && !Object.keys(state.answers).length) {
             body.innerHTML = `
                 <div class="db-concierge-message bot">
                     <strong>Hi, I’m the Dillon Builds Project Assistant.</strong>
@@ -162,12 +212,18 @@
                 </div>
                 <div class="db-concierge-actions">
                     <button type="button" data-start-planning>Plan my project</button>
+                    <button type="button" data-ask-question>Ask a question</button>
                     <button type="button" data-download-blank>Download blank Welcome Packet</button>
                 </div>
             `;
             body.querySelector("[data-start-planning]").addEventListener("click", () => {
                 state.view = "chat";
                 state.viewState = "planning";
+                render();
+            });
+            body.querySelector("[data-ask-question]").addEventListener("click", () => {
+                state.view = "chat";
+                state.viewState = "questions";
                 render();
             });
             body.querySelector("[data-download-blank]").addEventListener("click", downloadBlankPacket);
@@ -246,6 +302,89 @@
         }
 
         return form.querySelector("[name='step_value']")?.value.trim() || "";
+    }
+
+    function renderQuestions() {
+        const selectedTopic = questionTopics.find((topic) => topic.id === state.questionTopicId);
+
+        body.innerHTML = `
+            <div class="db-concierge-message bot">
+                <strong>Ask about Dillon Builds</strong>
+                <p>Choose a common question or type what you are wondering about. I can explain services, pricing, process, packets, and featured projects.</p>
+            </div>
+            <form class="db-concierge-question-form">
+                <input type="text" name="question" placeholder="Example: How much does a business website cost?">
+                <button type="submit">Ask</button>
+            </form>
+            <div class="db-concierge-question-grid">
+                ${questionTopics.map((topic) => `<button type="button" data-topic="${topic.id}">${escapeHtml(topic.label)}</button>`).join("")}
+            </div>
+            ${selectedTopic ? renderTopicAnswer(selectedTopic) : ""}
+            <div class="db-concierge-actions">
+                <button type="button" data-start-planning>Plan my project</button>
+                <button type="button" data-back-home>Back</button>
+            </div>
+        `;
+
+        body.querySelector(".db-concierge-question-form").addEventListener("submit", (event) => {
+            event.preventDefault();
+            const query = new FormData(event.currentTarget).get("question") || "";
+            state.questionTopicId = findQuestionTopic(String(query)).id;
+            render();
+        });
+
+        body.querySelectorAll("[data-topic]").forEach((button) => {
+            button.addEventListener("click", () => {
+                state.questionTopicId = button.dataset.topic;
+                render();
+            });
+        });
+
+        body.querySelector("[data-start-planning]").addEventListener("click", () => {
+            state.viewState = "planning";
+            render();
+        });
+
+        body.querySelector("[data-back-home]").addEventListener("click", () => {
+            state.questionTopicId = "";
+            state.viewState = "welcome";
+            render();
+        });
+
+        body.querySelectorAll("[data-question-action]").forEach((link) => {
+            link.addEventListener("click", (event) => {
+                event.preventDefault();
+                if (link.dataset.questionAction === "planning") {
+                    state.viewState = "planning";
+                    render();
+                }
+                if (link.dataset.questionAction === "blank-packet") {
+                    downloadBlankPacket();
+                }
+            });
+        });
+    }
+
+    function findQuestionTopic(query) {
+        const normalized = query.toLowerCase();
+        return questionTopics.find((topic) => topic.keywords.some((keyword) => normalized.includes(keyword))) || questionTopics[0];
+    }
+
+    function renderTopicAnswer(topic) {
+        return `
+            <div class="db-concierge-message bot">
+                <strong>${escapeHtml(topic.label)}</strong>
+                <p>${escapeHtml(topic.answer)}</p>
+                <div class="db-concierge-answer-links">
+                    ${topic.links.map((link) => {
+                        if (link.action) {
+                            return `<a href="#" data-question-action="${link.action}">${escapeHtml(link.label)}</a>`;
+                        }
+                        return `<a href="${link.href}">${escapeHtml(link.label)}</a>`;
+                    }).join("")}
+                </div>
+            </div>
+        `;
     }
 
     function renderRecommendation() {
@@ -351,7 +490,11 @@
                 </div>
             </div>
         `;
-        body.querySelector("[data-chat]").addEventListener("click", () => setView("chat"));
+        body.querySelector("[data-chat]").addEventListener("click", () => {
+            state.view = "chat";
+            state.viewState = "planning";
+            render();
+        });
         body.querySelector("[data-review]").addEventListener("click", () => { state.view = "chat"; state.viewState = "review"; render(); });
         body.querySelector("[data-reset]").addEventListener("click", () => {
             if (!confirm("Start over and clear this project brief?")) return;
