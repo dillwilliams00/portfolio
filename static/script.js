@@ -7,6 +7,8 @@ const searchEmpty = document.querySelector(".search-empty");
 const quoteForm = document.querySelector("[data-project-inquiry-form]");
 const filledPacketButton = document.querySelector("[data-download-filled-packet]");
 const packetStatus = document.querySelector("[data-packet-status]");
+const nav = document.querySelector(".nav");
+const mobileMenuQuery = window.matchMedia("(max-width: 768px)");
 const packetStorageKey = "dillonBuildsQuotePacketAnswers";
 const canonicalFormName = "quote-request";
 const projectFileLimits = {
@@ -16,17 +18,57 @@ const projectFileLimits = {
     allowedExtensions: [".jpg", ".jpeg", ".png", ".webp", ".svg", ".pdf", ".docx", ".txt"],
 };
 
+function setMenuOpen(isOpen) {
+    if (!menuToggle || !navLinks) return;
+
+    navLinks.classList.toggle("nav-open", isOpen);
+    nav?.classList.toggle("menu-open", isOpen);
+    document.documentElement.classList.toggle("nav-menu-open", isOpen);
+    document.body.classList.toggle("nav-menu-open", isOpen);
+    menuToggle.setAttribute("aria-expanded", String(isOpen));
+    menuToggle.setAttribute("aria-label", isOpen ? "Close navigation menu" : "Open navigation menu");
+    menuToggle.textContent = isOpen ? "×" : "☰";
+
+    if (!isOpen) {
+        document.querySelectorAll(".nav-dropdown.submenu-open").forEach((dropdown) => {
+            dropdown.classList.remove("submenu-open");
+        });
+    }
+}
+
 if (menuToggle && navLinks) {
     menuToggle.addEventListener("click", () => {
-        const isOpen = navLinks.classList.toggle("nav-open");
-        menuToggle.setAttribute("aria-expanded", String(isOpen));
-        menuToggle.textContent = isOpen ? "×" : "☰";
+        const isOpen = !navLinks.classList.contains("nav-open");
+        setMenuOpen(isOpen);
+    });
+
+    document.addEventListener("click", (event) => {
+        if (!navLinks.classList.contains("nav-open")) return;
+        if (navLinks.contains(event.target) || menuToggle.contains(event.target)) return;
+        setMenuOpen(false);
+    });
+
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && navLinks.classList.contains("nav-open")) {
+            setMenuOpen(false);
+            menuToggle.focus();
+        }
+    });
+
+    navLinks.addEventListener("click", (event) => {
+        const link = event.target.closest("a");
+        if (!link || link.closest(".nav-dropdown")?.querySelector(":scope > a") === link) return;
+        setMenuOpen(false);
+    });
+
+    mobileMenuQuery.addEventListener("change", (event) => {
+        if (!event.matches) setMenuOpen(false);
     });
 }
 
 dropdownParents.forEach((dropdownLink) => {
     dropdownLink.addEventListener("click", (event) => {
-        const isMobile = window.matchMedia("(max-width: 650px)").matches;
+        const isMobile = mobileMenuQuery.matches;
         if (!isMobile) return;
         event.preventDefault();
         const parentDropdown = dropdownLink.closest(".nav-dropdown");
